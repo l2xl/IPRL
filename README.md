@@ -26,7 +26,7 @@ Add the following to your repository:
 
 * LICENSE.md — the license text
 
-* LICENSE.md.asc — your signed proof of authorship (see below)
+* LICENSE.md.asc — GPG signature (see below)
 
 ### 2. Add License Header to Each Source File
 
@@ -62,12 +62,12 @@ gpg --armor --export your@email.com > publickey.asc
 #### c. Sign the LICENSE.md
 
 ```bash
-gpg --clearsign LICENSE.md
+gpg --detach-sign --armor LICENSE.md
 ```
 
 ---
 
-## Relicensing Instructions (e.g., for Open Source Transition)
+## Relicensing Instructions Recomentdation (e.g., for Open Source Transition)
 
 If the intellectual property is later transferred (e.g., to a company as founder’s capital), and a decision is made to relicense under an Open Source license, follow this process to avoid legal ambiguity:
 
@@ -97,10 +97,11 @@ CEO, NewCo Ltd.
 Digitally sign RELICENSING.md using:
 
 ```
-gpg --clearsign RELICENSING.md
+gpg --detach-sign --armor RELICENSING.md
 # Output: RELICENSING.md.asc
-
 ```
+
+It is possible to use --clearsign command which includes original signed file into the RELICENSING.md.asc. In this case commiting of RELICENSING.md is excessive because RELICENSING.md.asc is selfcontaining
 
 4. Commit the Change
 
@@ -110,7 +111,7 @@ Make a git commit including:
 
 * RELICENSING.md
 
-* new AUTHORITY.asc with signature of RELICENSING.md
+* RELICENSING.md.asc with signature of RELICENSING.md
 
 ---
 

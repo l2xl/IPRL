@@ -35,9 +35,14 @@ to files with author attribution, including but not limited to Git, Mercurial, a
 commit, Mercurial changeset, or SVN revision — that records modifications to the
 Software with a cryptographically verifiable author identity.
 
-**"Signing Key"** means a GPG/OpenPGP key pair, an SSH key pair, or an X.509
-certificate used to produce cryptographic signatures on Changesets or files, where the
-public portion is recorded in the Contributor Registry.
+**"Signing Key"** means any asymmetric cryptographic key pair or credential capable of
+producing a verifiable digital signature on Changesets or files, where the public
+portion or verifying credential is recorded in the Contributor Registry. This includes,
+without limitation, OpenPGP/GPG keys, SSH keys, X.509 certificates, and any other
+signing scheme supported by the VCS in use or by an applicable cryptographic standard
+now existing or developed in the future. This License does not restrict the signing
+algorithm, key type, or key size beyond the minimum required for cryptographic
+verifiability against the recorded public credential.
 
 **"Authoritative Changeset"** means a Changeset that is cryptographically signed by a
 Licensed Contributor using a Signing Key registered in the Contributor Registry at the
@@ -45,22 +50,23 @@ time the Changeset is made, such that the signature can be verified using standa
 tooling (e.g., `git verify-commit`) against the public key recorded in the Contributor
 Registry.
 
-**"Alien Changeset"** means any Changeset that is not an Authoritative Changeset — i.e.,
-it is unsigned, or signed with a key not registered in the Contributor Registry.
+**"External Changeset"** means any Changeset that is not an Authoritative Changeset —
+i.e., it is unsigned, or signed with a key not registered in the Contributor Registry.
 
-**"Ratified Changeset"** means an Alien Changeset that has been explicitly accepted into
-canonical history by an Authoritative Changeset in accordance with Section 5.
+**"Ratified Changeset"** means an External Changeset that has been explicitly accepted
+into canonical history by an Authoritative Changeset in accordance with Section 5.
 
 **"Contributor Registry"** means the authoritative, VCS-tracked list of Licensed
-Contributors and their Signing Keys, maintained in a file named `CONTRIBUTORS.iprl` in
-the root of the Software repository. The format is defined in Appendix B.
+Contributors and their public signing credentials, maintained in a file named
+`CONTRIBUTORS` in the root of the Software repository. The minimum required content
+is defined in Appendix B; the file format is not mandated by this License.
 
 **"Licensed Contributor"** means any natural person or legal entity whose Signing Key is
 recorded in the current Contributor Registry at the time a relevant Changeset is made.
 
 **"Founding Contributor"** means the first Licensed Contributor to apply this License
-to the Software, whose identity is established by the initial `LICENSE.md.asc` signature
-described in Section 3.1.
+to the Software, whose identity is established by the Foundational Changeset described
+in Section 3.1.
 
 **"Contributor Pool"** means the set of all current Licensed Contributors.
 
@@ -102,28 +108,35 @@ platform-specific features.
 
 ## 3. Identification of Rightsholders
 
-### 3.1 Foundational Signature
+### 3.1 Foundational Changeset
 
-The Founding Contributor establishes this License by creating, in an Authoritative
-Changeset:
+The Founding Contributor establishes this License by creating the **Foundational
+Changeset**: an Authoritative Changeset that introduces, at minimum:
 
-(a) A file `LICENSE.md` containing the full text of this License;
-(b) A file `LICENSE.md.asc` containing a detached cryptographic signature of `LICENSE.md`,
-    produced with the Founding Contributor's Signing Key; and
-(c) The initial `CONTRIBUTORS.iprl` file recording the Founding Contributor's entry.
+(a) A file `LICENSE.md` containing the full text of this License; and
+(b) The initial `CONTRIBUTORS` file recording the Founding Contributor's entry.
+
+Because the Foundational Changeset is itself cryptographically signed by the Founding
+Contributor, the Changeset signature is the proof of authorship and the acceptance of
+this License. A separate detached signature file (`LICENSE.md.asc`) is **optional**:
+it may be included for the convenience of recipients who verify the License text outside
+a VCS context, but its presence or absence does not affect the validity of this License.
 
 The Founding Contributor's Signing Key must be capable of verification at the time of
-the Foundational Signature and for a reasonable period thereafter.
+the Foundational Changeset and for a reasonable period thereafter.
 
-### 3.2 Changeset-Based Attribution (Primary Mode)
+### 3.2 Changeset-Based Attribution (VCS Mode)
 
 When the Software is managed in a VCS, a Licensed Contributor's authorship of any
 content is established by the existence of one or more Authoritative Changesets
-introducing or modifying that content.
+introducing or modifying that content. The Authoritative Changeset signature is the
+cryptographic proof of authorship and the operative license declaration for that content.
 
-**When Changeset-Based Attribution is used, no per-file license header is required.**
-The Authoritative Changeset signature serves as the license declaration and authorship
-proof for all content introduced or modified by that Changeset.
+**Per-file license headers are required** in all source files, but in VCS Mode the
+header serves as a human-readable notice only — it does not need to embed the
+contributor's public key or signing credential, because that information is recorded
+in the `CONTRIBUTORS` file within the VCS history. The required header format is
+defined in Appendix A.
 
 To configure git commit signing for use with this License:
 
@@ -134,26 +147,30 @@ git config commit.gpgsign true
 
 Signatures are verifiable using `git verify-commit <sha>` or `git log --show-signature`.
 
-### 3.3 File Header Mode (Alternative / Snapshot Mode)
+### 3.3 Snapshot / Out-of-VCS Distribution Mode
 
-As an alternative to Changeset-Based Attribution, or when the Software is distributed
-outside a VCS (e.g., as a source archive without commit history), a Licensed Contributor
-must embed a license header in each source file using the format specified in Appendix A.
+When the Software is distributed outside a VCS — for example, as a source archive,
+a tarball, a file copy, or any form in which the full commit history and signatures
+are not preserved — each distributed source file **must** include a file header
+containing, in addition to the standard notice:
 
-File Header Mode must be used when:
+(a) the public signing credential (e.g., GPG public key, SSH public key, or certificate)
+    of the Licensed Contributor responsible for that file's content; or
+(b) a reference sufficient to locate and verify that credential independently (e.g., a
+    key fingerprint and a durable URL or key server reference).
 
-(a) The Software is distributed as a snapshot or archive without full VCS commit history; or
-(b) Any file is distributed in isolation from its VCS context.
+This ensures that recipients without VCS access can independently verify the authorship
+chain. The full header format for Snapshot Mode is defined in Appendix A.
 
-### 3.4 Key Integrity and Key Compromise
+### 3.4 Signing Key Integrity and Compromise
 
 The use of a cryptographic Signing Key does not limit a Licensed Contributor's ability
 to assert exclusive rights by other legally accepted means. In the event of key loss,
 revocation, or compromise:
 
 (a) The Licensed Contributor should create a new Authoritative Changeset with a new
-    Signing Key updating their entry in `CONTRIBUTORS.iprl`, signed (if possible) with
-    the old key or countersigned by another Licensed Contributor;
+    Signing Key updating their entry in `CONTRIBUTORS`, signed (if possible) with the
+    old key or countersigned by another Licensed Contributor;
 (b) Authorship of prior Authoritative Changesets remains valid and provable by the
     immutable VCS history and the content of those Changesets;
 (c) A statutory declaration or other legally sufficient evidence of identity may be
@@ -165,7 +182,7 @@ revocation, or compromise:
 
 ### 4.1 Formation
 
-The Founding Contributor constitutes the initial Contributor Pool. The `CONTRIBUTORS.iprl`
+The Founding Contributor constitutes the initial Contributor Pool. The `CONTRIBUTORS`
 file is the sole authoritative source for Pool membership and must contain, for each
 Licensed Contributor, the information specified in Appendix B.
 
@@ -175,19 +192,19 @@ A person or entity is admitted to the Contributor Pool only when **both** of the
 following conditions are satisfied:
 
 (a) **Nomination**: An existing Licensed Contributor creates an Authoritative Changeset
-    that adds the nominee's entry (including their Signing Key) to `CONTRIBUTORS.iprl`; and
+    that adds the nominee's entry (including their Signing Key) to `CONTRIBUTORS`; and
 
 (b) **Acceptance**: The nominee, using their own Signing Key (which must now match the
     key recorded under their entry), creates a subsequent Authoritative Changeset that
     contains an explicit written acceptance of the terms of this License.
 
-An entry in `CONTRIBUTORS.iprl` without a corresponding acceptance Changeset from the
+An entry in `CONTRIBUTORS` without a corresponding acceptance Changeset from the
 nominee does not constitute admission. A nominee's acceptance Changeset simultaneously
 constitutes their grant under Section 4.4.
 
 ### 4.3 Platform-Independent Registry
 
-The `CONTRIBUTORS.iprl` file is the sole mechanism for defining the Contributor Pool.
+The `CONTRIBUTORS` file is the sole mechanism for defining the Contributor Pool.
 Platform-level access controls (e.g., GitHub repository teams, GitLab project members)
 do **not** automatically grant or imply Licensed Contributor status. Such lists may
 serve as corroborating evidence of identity and intent but have no independent legal
@@ -219,7 +236,7 @@ Pool member has full operational rights.
 ### 4.5 Withdrawal of a Licensed Contributor
 
 A Licensed Contributor may withdraw from the Pool by creating an Authoritative Changeset
-explicitly declaring their withdrawal and updating `CONTRIBUTORS.iprl`. Withdrawal:
+explicitly declaring their withdrawal and updating `CONTRIBUTORS`. Withdrawal:
 
 (a) does not retroactively revoke rights in Changesets made prior to withdrawal;
 (b) does not affect the intra-pool grants already given, which remain irrevocable;
@@ -237,12 +254,12 @@ does not retroactively affect the removed Contributor's ownership of prior Chang
 
 ---
 
-## 5. Alien Changesets
+## 5. External Changesets
 
 ### 5.1 Effect on Authorship
 
-An Alien Changeset does not grant any intellectual property rights to its author under
-this License. The author of an Alien Changeset:
+An External Changeset does not grant any intellectual property rights to its author under
+this License. The author of an External Changeset:
 
 (a) does not become a Licensed Contributor;
 (b) does not acquire any rights to the Software beyond those granted to Users under
@@ -251,30 +268,30 @@ this License. The author of an Alien Changeset:
 
 ### 5.2 Ratification
 
-An Alien Changeset is Ratified — and thereby incorporated into the canonical Software
+An External Changeset is Ratified — and thereby incorporated into the canonical Software
 history without constituting a license breach — when a Licensed Contributor creates an
 Authoritative Changeset that:
 
 (a) **Is a direct successor**: the Authoritative Changeset's parent (in VCS graph terms)
-    is the Alien Changeset or an unbroken chain of Alien Changesets; or
+    is the External Changeset or an unbroken chain of External Changesets; or
 
 (b) **Contains an explicit reference**: the Authoritative Changeset explicitly identifies
-    the Alien Changeset by its cryptographic identifier (e.g., git commit SHA) and
+    the External Changeset by its cryptographic identifier (e.g., git commit SHA) and
     includes a statement of acceptance (e.g., "Ratified: <sha>").
 
 A Ratifying Licensed Contributor assumes responsibility for the content of the Ratified
-Changesets as part of the canonical Software history. The Alien Changeset author acquires
+Changesets as part of the canonical Software history. The External Changeset author acquires
 no additional rights through Ratification.
 
 ### 5.3 Ratification Deadline
 
-An Alien Changeset that is present in any publicly accessible repository and is not
+An External Changeset that is present in any publicly accessible repository and is not
 Ratified within **ninety (90) calendar days** of its first public appearance must be
 removed from the canonical history by any Licensed Contributor. Knowingly maintaining
-or distributing the Software in a state containing unratified, overdue Alien Changesets
+or distributing the Software in a state containing unratified, overdue External Changesets
 constitutes a breach of this License by the maintaining party.
 
-Alien Changesets in private branches or forks, or in branches not yet merged into the
+External Changesets in private branches or forks, or in branches not yet merged into the
 canonical main branch, are not subject to this deadline until the branch is merged or
 publicly distributed as part of the Software.
 
@@ -304,9 +321,9 @@ non-sublicensable, irrevocable (except as provided in Section 9) license to:
 
     (i)   the full VCS history, including all Authoritative Changeset signatures, is
           preserved and cryptographically verifiable in any distributed VCS repository;
-    (ii)  where File Header Mode is used, all headers are preserved intact and unmodified;
-    (iii) `LICENSE.md`, `LICENSE.md.asc`, and `CONTRIBUTORS.iprl` are included and
-          unmodified;
+    (ii)  all per-file license headers are preserved intact and unmodified;
+    (iii) `LICENSE.md` and `CONTRIBUTORS` are included and unmodified, and
+          `LICENSE.md.asc` is included unmodified if present;
     (iv)  the recipient is notified that the Software is governed by this License; and
     (v)   no additional restrictions are imposed on recipients beyond those stated here.
 
@@ -335,8 +352,8 @@ You are expressly prohibited from:
     transferring Your rights in the Software to any third party;
 
 (d) **Tampering with Attribution**: removing, obscuring, forging, or altering any license
-    notices, Signing Key data, Authoritative Changeset signatures, `CONTRIBUTORS.iprl`,
-    or `LICENSE.md.asc`;
+    headers, Signing Key data, Authoritative Changeset signatures, `CONTRIBUTORS`,
+    `LICENSE.md`, or `LICENSE.md.asc` (if present);
 
 (e) **False Ownership Claims**: using the Software in any manner that could be construed
     as asserting ownership over it by a party who is not a Licensed Contributor.
@@ -373,7 +390,7 @@ legal entity (e.g., as a founder's IP contribution upon company formation):
     purposes of the intra-pool mutual grant, becoming bound by this License as a
     Licensed Contributor;
 (c) The contributing Licensed Contributor must create an Authoritative Changeset
-    updating `CONTRIBUTORS.iprl` to record the legal entity as successor-in-interest
+    updating `CONTRIBUTORS` to record the legal entity as successor-in-interest
     to their entry, including the legal entity's authorized Signing Key(s).
 
 ---
@@ -453,7 +470,7 @@ genuinely stopped.
 ### 10.3 Voluntary Dormancy
 
 The Software becomes Dormant immediately and without any Diligent Search Procedure
-when **all** Licensed Contributors listed in the then-current `CONTRIBUTORS.iprl` have
+when **all** Licensed Contributors listed in the then-current `CONTRIBUTORS` have
 each separately published an Authoritative Changeset or a signed public statement
 explicitly declaring the Software Dormant and consenting to release under the Fallback
 License. Voluntary Dormancy takes effect upon the last such declaration and is
@@ -482,7 +499,7 @@ reasonably practicable:
 1. **Mirror and fork search**: check all major publicly accessible code hosting
    platforms (including but not limited to GitHub, GitLab, Codeberg, Bitbucket, and
    Sourcehut) for repositories matching the Software's name, description, or
-   contributor identities listed in `CONTRIBUTORS.iprl`;
+   contributor identities listed in `CONTRIBUTORS`;
 2. **Archival search**: check software preservation services (including the Software
    Heritage archive at softwareheritage.org and the Internet Archive at archive.org)
    for indexed copies of the repository;
@@ -490,7 +507,7 @@ reasonably practicable:
    crates.io, Maven Central, RubyGems) for recent releases of any package known to
    correspond to the Software;
 4. **Contributor contact**: send written notice to every email address listed in
-   `CONTRIBUTORS.iprl`, informing each Licensed Contributor of the Claimant's intent
+   `CONTRIBUTORS`, informing each Licensed Contributor of the Claimant's intent
    and requesting confirmation of the Software's status. Contact attempts must allow
    reasonable delivery (use of an email delivery-confirmation mechanism is recommended);
 5. **Public statement search**: search for any recent public statements (blog posts,
@@ -544,9 +561,9 @@ Development Declaration within the Response Period. A valid Active Development
 Declaration must:
 
 (a) be cryptographically signed with the Licensed Contributor's Signing Key, even if
-    using a new key not yet recorded in a publicly accessible `CONTRIBUTORS.iprl` (in
+    using a new key not yet recorded in a publicly accessible `CONTRIBUTORS` (in
     which case the Contributor must provide sufficient evidence to link the key to their
-    identity as recorded in the last accessible `CONTRIBUTORS.iprl`);
+    identity as recorded in the last accessible `CONTRIBUTORS`);
 (b) identify a currently accessible repository URL where active development is occurring
     or will occur, or provide a credible statement of intent to resume development;
 (c) explicitly reference the Claimant's Notice of Dormancy Claim by its publication
@@ -587,7 +604,7 @@ rights granted under this License. For the avoidance of doubt:
 (iii) Confirmed Dormancy is irrevocable; subsequent resumption of development does not
       withdraw the Fallback License from any person who relied on it in good faith;
 (iv) the Apache License, Version 2.0 attribution requirements apply; downstream users
-     must preserve copyright notices and `CONTRIBUTORS.iprl`.
+     must preserve copyright notices and `CONTRIBUTORS`.
 
 **Dormancy Record.** Upon exercising Fallback License rights, the Claimant should
 include a file named `DORMANCY.md` in any distributed copy of the Software, documenting
@@ -637,9 +654,9 @@ electronic signatures under:
 - the UNCITRAL Model Law on Electronic Signatures;
 - and equivalent national legislation in other jurisdictions.
 
-A cryptographic signature on a Changeset or on `LICENSE.md.asc` is legally equivalent
-to a handwritten signature on a document asserting authorship and acceptance of these
-terms.
+A cryptographic signature on a Changeset, or on the optional `LICENSE.md.asc` detached
+signature file, is legally equivalent to a handwritten signature on a document asserting
+authorship and acceptance of these terms.
 
 National appendices may be issued by Licensed Contributors for local compliance without
 affecting the global applicability of this License.
@@ -663,80 +680,105 @@ OF SUCH DAMAGES.
 
 ## 13. License of This Document
 
-The text of this License (`LICENSE.md`), the `CONTRIBUTORS.iprl` format specification
+The text of this License (`LICENSE.md`), the `CONTRIBUTORS` format guidance
 (Appendix B), and all accompanying templates and documentation are released under the
 **Creative Commons Zero v1.0 Universal (CC0)** license. You are free to copy, modify,
 distribute, and use them without restriction, for any purpose, without asking permission.
 
 ---
 
-## Appendix A: File Header Format (File Header Mode)
+## Appendix A: File Header Format
 
-Use language-appropriate comment syntax. Include at minimum the license name and a
-reference to `CONTRIBUTORS.iprl`. The full public key may be included for snapshot
-distributions where the VCS history is not available.
+Every source file distributed under this License must carry a license header using
+language-appropriate comment syntax. Two forms are defined:
+
+### A.1 VCS Mode Header (minimum required in repositories with full commit history)
+
+The VCS Mode header is a human-readable notice. The cryptographic proof of authorship
+is in the Authoritative Changeset signature; the header does not need to embed key
+material.
 
 ```
 // [Optional copyright notice, e.g.: Copyright (C) 2024 Alice Smith]
 // Distributed under the Intellectual Property Reserve License (IPRL) v2.0
-// Licensed Contributors: see CONTRIBUTORS.iprl
-//
-// [Include the following block only in snapshot/archive distributions:]
-// GPG Public Key of contributing author:
-// -----BEGIN PGP PUBLIC KEY BLOCK-----
-// [key here]
-// -----END PGP PUBLIC KEY BLOCK-----
+// Licensed Contributors: see CONTRIBUTORS
 ```
+
+### A.2 Snapshot Mode Header (required when distributed outside VCS context)
+
+When files are distributed without full VCS history — e.g., as a source archive, a
+tarball, or an individual file copy — the header must additionally include the public
+signing credential of the contributing author, or a durable reference to it, so that
+recipients can verify authorship without VCS access.
+
+```
+// [Optional copyright notice, e.g.: Copyright (C) 2024 Alice Smith]
+// Distributed under the Intellectual Property Reserve License (IPRL) v2.0
+// Licensed Contributors: see CONTRIBUTORS
+//
+// Author signing credential (for verification outside VCS):
+// [include any of the following sufficient for independent verification:]
+//   Key fingerprint: ABCD 1234 5678 9ABC DEF0  1234 5678 9ABC DEAD BEEF
+//   SSH public key:  ssh-ed25519 AAAA...
+//   Full public key block: -----BEGIN PGP PUBLIC KEY BLOCK----- ...
+//   Key reference:   https://keyserver.example.com/pks/lookup?...
+```
+
+Any credential type that can be used to verify a Signing Key recorded in `CONTRIBUTORS`
+is acceptable. The format is not mandated beyond the requirement of being sufficient for
+independent verification.
 
 ---
 
-## Appendix B: CONTRIBUTORS.iprl Format
+## Appendix B: CONTRIBUTORS File
 
-The `CONTRIBUTORS.iprl` file uses TOML syntax and must be maintained as an Authoritative
-Changeset. The file is the sole authoritative Contributor Registry. Example:
+The `CONTRIBUTORS` file is the Contributor Registry defined in Section 1. It must be
+maintained as an Authoritative Changeset (i.e., any modification to it must be in a
+commit signed by a Licensed Contributor). Because the file is authenticated by the VCS
+signature of the Changeset that introduces or modifies it, no separate signature file
+for `CONTRIBUTORS` is required.
 
-```toml
-# CONTRIBUTORS.iprl — Licensed Contributor Registry
-# Governed by the Intellectual Property Reserve License (IPRL) v2.0
-# This file is authoritative only when it exists in an Authoritative Changeset.
-# Last modified: <ISO 8601 date> by <contributor name>
+**Required information per contributor:**
 
-license_version = "2.0"
-repository = "https://example.com/org/repo"   # optional canonical URL
+1. Full legal name or recognized pseudonym;
+2. One or more contact email addresses;
+3. Date of admission (ISO 8601);
+4. The SHA of the contributor's own acceptance Changeset (Section 4.2(b));
+5. One or more public signing credentials, sufficient for signature verification.
+   Any credential type is accepted (OpenPGP public key, SSH public key, X.509
+   certificate, or any other verifiable public credential). Multiple credential types
+   for a single contributor are encouraged for resilience against algorithm obsolescence.
 
-[[contributor]]
-name          = "Alice Smith"
-email         = ["alice@example.com"]
-admitted      = "2024-01-15"   # ISO 8601 date of acceptance Changeset
-accepted_sha  = "abc123def456" # SHA of the contributor's own acceptance Changeset
+**Format:** The `CONTRIBUTORS` file format is not mandated by this License. Any
+human-readable, plain-text format (plain text, Markdown, TOML, YAML, etc.) is
+acceptable, provided the required information above is unambiguously present and the
+file is maintained as described. The following is one example using plain text:
 
-  [[contributor.signing_keys]]
-  format      = "gpg"
-  fingerprint = "ABCD 1234 5678 9ABC DEF0  1234 5678 9ABC DEAD BEEF"
-  pubkey      = """
------BEGIN PGP PUBLIC KEY BLOCK-----
-[ASCII-armored key here]
------END PGP PUBLIC KEY BLOCK-----
-"""
+```
+CONTRIBUTORS — Licensed Contributor Registry
+Governed by: Intellectual Property Reserve License (IPRL) v2.0
+This file is authoritative only as part of an Authoritative Changeset.
 
-  [[contributor.signing_keys]]
-  format      = "ssh"
-  pubkey      = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... alice@example.com"
+---
 
-[[contributor]]
-name          = "Bob Jones"
-email         = ["bob@example.com", "bob@work.example.com"]
-admitted      = "2024-03-01"
-accepted_sha  = "fedcba987654"
+Name:           Alice Smith
+Email:          alice@example.com
+Admitted:       2024-01-15
+Accepted SHA:   abc123def456
+Signing keys:
+  gpg:  ABCD 1234 5678 9ABC DEF0  1234 5678 9ABC DEAD BEEF
+        (full key: -----BEGIN PGP PUBLIC KEY BLOCK----- ...)
+  ssh:  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI...
 
-  [[contributor.signing_keys]]
-  format      = "gpg"
-  fingerprint = "1234 5678 9ABC DEF0 1234  5678 9ABC DEF0 CAFE BABE"
-  pubkey      = """
------BEGIN PGP PUBLIC KEY BLOCK-----
-[ASCII-armored key here]
------END PGP PUBLIC KEY BLOCK-----
-"""
+---
+
+Name:           Bob Jones
+Email:          bob@example.com, bob@work.example.com
+Admitted:       2024-03-01
+Accepted SHA:   fedcba987654
+Signing keys:
+  gpg:  1234 5678 9ABC DEF0 1234  5678 9ABC DEF0 CAFE BABE
+        (full key: -----BEGIN PGP PUBLIC KEY BLOCK----- ...)
 ```
 
 ---
@@ -753,35 +795,51 @@ git verify-commit --verbose <sha>
 ```bash
 git log --show-signature
 git log --pretty="%h %G? %GS %s"
-# %G? codes: G=good, B=bad, U=unknown, N=no signature
+# %G? codes: G=good, B=bad, U=unknown, X=expired key, R=revoked key, N=no signature
 ```
 
-**Check the Contributor Registry:**
+**Extract signer fingerprint and cross-check CONTRIBUTORS:**
 ```bash
-# Extract signer fingerprint from a commit and check CONTRIBUTORS.iprl
-git log --pretty="%H %GF" | head -20
+git log --pretty="%H %GF %GS" | head -20
 ```
 
-**Verify the License signature:**
+**Verify the optional LICENSE.md.asc detached signature (if present):**
 ```bash
+# GPG:
 gpg --verify LICENSE.md.asc LICENSE.md
+# or for any signing tool that produced the .asc:
+# check the signature type from the file header and use the appropriate verifier
 ```
 
-**Find Alien Changesets (unsigned commits) in a range:**
+**Find External Changesets (unsigned or unregistered-key commits) in a range:**
 ```bash
-git log --pretty="%H %G?" main | awk '$2 == "N" || $2 == "B" {print $1}'
+git log --pretty="%H %G?" main | awk '$2 == "N" || $2 == "B" || $2 == "U" {print $1}'
+# N = no signature (External Changeset)
+# B = bad signature (potentially tampered)
+# U = good signature but key not in local trust store (verify against CONTRIBUTORS manually)
 ```
 
-**Configure automatic commit signing (GPG):**
+**Configure automatic commit signing — GPG/OpenPGP:**
 ```bash
 git config --global user.signingkey <KEY-FINGERPRINT>
 git config --global commit.gpgsign true
 ```
 
-**Configure automatic commit signing (SSH):**
+**Configure automatic commit signing — SSH:**
 ```bash
 git config --global gpg.format ssh
 git config --global user.signingkey ~/.ssh/id_ed25519.pub
+git config --global commit.gpgsign true
+# For local verification of SSH-signed commits, also set:
+git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
+# allowed_signers format: "email@example.com namespaces=\"git\" ssh-ed25519 AAAA..."
+```
+
+**Configure automatic commit signing — S/MIME (X.509):**
+```bash
+git config --global gpg.format x509
+git config --global gpg.x509.program smimesign
+git config --global user.signingkey <CERTIFICATE-ID>
 git config --global commit.gpgsign true
 ```
 

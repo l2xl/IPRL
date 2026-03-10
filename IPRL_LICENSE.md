@@ -19,7 +19,7 @@ is essential to its IP-preservation purpose. Commercial use of the unmodified So
 is explicitly permitted. A time-triggered, irrevocable transition to a fully Open Source
 license is provided in Section 10 (Dormancy and Fallback) to protect the public interest
 in the event of development cessation. The relationship to the Open Source Definition is
-explained in Appendix D.
+explained in Appendix C.
 
 ---
 
@@ -345,11 +345,11 @@ You are expressly prohibited from:
 (b) **Transfer of Rights**: sublicensing, selling, renting, leasing, or otherwise
     transferring Your rights in the Software to any third party;
 
-(d) **Tampering with Attribution**: removing, obscuring, forging, or altering any license
+(c) **Tampering with Attribution**: removing, obscuring, forging, or altering any license
     headers, Signing Key data, Authoritative Changeset signatures, `CONTRIBUTORS`,
     `LICENSE.md`, or `LICENSE.md.asc` (if present);
 
-(e) **False Ownership Claims**: using the Software in any manner that could be construed
+(d) **False Ownership Claims**: using the Software in any manner that could be construed
     as asserting ownership over it by a party who is not a Licensed Contributor.
 
 ---
@@ -774,33 +774,11 @@ ssh-ed25519 AAAAC3Nzb...
 
 ---
 
-## Appendix C: Verification (Informative)
-
-*This appendix is informative and non-normative. It describes the verification
-concept; specific tooling commands depend on the VCS in use.*
-
-To confirm that a Changeset is an Authoritative Changeset:
-
-1. Use the VCS's native commit signature verification facility to confirm that the
-   Changeset carries a valid cryptographic signature that has not been tampered with.
-2. Locate the public signing credential reported by that verification in the
-   `CONTRIBUTORS` file as it existed in the repository at the time of that Changeset.
-   If the credential is present, the Changeset is Authoritative.
-
-To confirm that the `CONTRIBUTORS` file itself has not been tampered with, verify the
-signature of the Changeset that last modified it using the same procedure.
-
-Consult your VCS documentation for the specific commands used to inspect and verify
-Changeset signatures. The optional `LICENSE.md.asc` file, if present, can be verified
-using the appropriate standalone tool for its signature type.
-
----
-
-## Appendix D: Relationship to the Open Source Definition
+## Appendix C: Relationship to the Open Source Definition
 
 The Open Source Initiative (OSI) Open Source Definition (OSD) requires, among other
 criteria, that a license permit modification and the creation of derivative works
-(OSD criterion 3) and not restrict use in any field of endeavor (OSD criterion 6).
+(OSD criterion 3).
 
 **This License intentionally does not comply with OSD criterion 3** (modification and
 derivative works), for the following reason:
@@ -810,17 +788,13 @@ derivative works), for the following reason:
   granted universally, the Software could not be maintained as a bounded, identifiable
   object of IP for registration, valuation, and founder-contribution purposes.
 
-This License **does comply with OSD criterion 6** (no restriction on fields of endeavor):
-commercial use of the unmodified Software is explicitly and unconditionally permitted
-under Section 6.
-
-The remaining single-criterion non-compliance (OSD criterion 3) is structurally
-analogous to the Creative Commons Attribution-NoDerivatives (CC BY-ND) family of
-licenses applied to software — freely usable and commercially deployable, but not
-modifiable by those outside the Contributor Pool. Upon Dormancy (Section 10), the
-Software automatically becomes governed by the Apache License, Version 2.0, which is
-fully OSI-certified. IPRL is therefore best characterized as a **no-derivatives
-source-available license with a built-in open source transition**.
+This single-criterion non-compliance is structurally analogous to the Creative Commons
+Attribution-NoDerivatives (CC BY-ND) family of licenses applied to software — freely
+usable and commercially deployable without restriction, but not modifiable by those
+outside the Contributor Pool. Upon Dormancy (Section 10), the Software automatically
+becomes governed by the Apache License, Version 2.0, which is fully OSI-certified.
+IPRL is therefore best characterized as a **no-derivatives source-available license
+with a built-in open source transition**.
 
 If OSI compliance from day one is required for a particular use case, the parties should
 negotiate a separate license with the Licensed Contributors or await Dormancy.

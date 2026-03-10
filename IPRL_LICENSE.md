@@ -408,64 +408,219 @@ Licensed Contributors may, individually or collectively:
 
 ## 10. Dormancy and Fallback License
 
-### 10.1 Dormancy Trigger
+### 10.1 Additional Definitions for This Section
 
-The Software becomes **Dormant** upon the occurrence of either:
+**"Apparent Dormancy"** means a rebuttable factual presumption, arising when no
+Authoritative Changeset has been verifiably published in any publicly accessible
+repository known to a Dormancy Claimant for a continuous period of twenty-four (24)
+calendar months, measured from the VCS timestamp of the last known Authoritative
+Changeset. Apparent Dormancy is a necessary but not sufficient condition for the
+Fallback License to become available; it is rebutted by an Active Development
+Declaration (Section 10.5).
 
-(a) **Automatic Dormancy**: no Authoritative Changeset has been added to any publicly
-    accessible instance of the canonical repository for a continuous period of
-    twenty-four (24) calendar months. The Dormancy date is twenty-four months after
-    the last Authoritative Changeset's VCS timestamp; or
+**"Confirmed Dormancy"** means the state of the Software after a Dormancy Claimant has
+completed the Diligent Search Procedure (Section 10.4) and the Response Period
+(Section 10.4(d)) has elapsed without a valid Active Development Declaration being
+published. Confirmed Dormancy makes the Fallback License available to the Claimant.
 
-(b) **Voluntary Dormancy**: every Licensed Contributor listed in the then-current
-    `CONTRIBUTORS.iprl` has separately created an Authoritative Changeset explicitly
-    declaring the Software Dormant. Voluntary Dormancy takes effect upon the last
-    such declaration.
+**"Voluntary Dormancy"** means a state declared explicitly by the Licensed Contributors
+themselves under Section 10.3. Voluntary Dormancy requires no Diligent Search Procedure.
 
-### 10.2 Effect of Dormancy — Fallback License
+**"Dormancy Claimant"** (or "Claimant") means any person or entity who initiates the
+Diligent Search Procedure with the intent to exercise rights under the Fallback License.
 
-Upon Dormancy, the Software is **automatically and irrevocably re-licensed** under the
-**Apache License, Version 2.0** (the Fallback License), in addition to the rights
-already granted under this License.
+**"Notice of Dormancy Claim"** means the public, timestamped document published by a
+Claimant as part of the Diligent Search Procedure.
 
-The Fallback License is granted to all persons worldwide, including the rights to use,
-modify, distribute, and sublicense the Software commercially, subject to the attribution
-and notice requirements of the Apache License, Version 2.0.
+**"Active Development Declaration"** means a public rebuttal of Apparent Dormancy
+published by a Licensed Contributor as described in Section 10.5.
 
-For the avoidance of doubt:
+**"Response Period"** means sixty (60) calendar days from the date of publication of a
+Notice of Dormancy Claim, during which Licensed Contributors may issue an Active
+Development Declaration.
 
-(i)  Licensed Contributors retain copyright ownership of their respective Changesets
-     after Dormancy; the Fallback License is a license, not a transfer;
+### 10.2 Rationale: Repository Freeze Is Not Project Death
+
+A repository becoming inaccessible or receiving no new commits does not necessarily
+mean development has ceased. Common scenarios include: migration to a different hosting
+platform; discontinuation of the original hosting service; repository archival pending
+refactoring; or extended but temporary inactivity. A simplistic time-based trigger would
+risk triggering the Fallback License against actively-developing projects that have
+merely changed location or paused. The procedure in this Section is designed to prevent
+that outcome while still ensuring the public interest is served when development has
+genuinely stopped.
+
+### 10.3 Voluntary Dormancy
+
+The Software becomes Dormant immediately and without any Diligent Search Procedure
+when **all** Licensed Contributors listed in the then-current `CONTRIBUTORS.iprl` have
+each separately published an Authoritative Changeset or a signed public statement
+explicitly declaring the Software Dormant and consenting to release under the Fallback
+License. Voluntary Dormancy takes effect upon the last such declaration and is
+irrevocable.
+
+### 10.4 Diligent Search Procedure
+
+A Claimant may exercise Fallback License rights under Confirmed Dormancy only after
+completing the following procedure in good faith. Skipping or superficially performing
+any step disqualifies the claim and exposes the Claimant to liability for infringement.
+
+**(a) Establish Apparent Dormancy.**
+Record, with timestamps:
+- the cryptographic identifier (e.g., full git SHA) and VCS timestamp of the last
+  Authoritative Changeset found;
+- the URL(s) of all repository instances examined.
+Apparent Dormancy requires a gap of at least twenty-four (24) continuous calendar months
+with no Authoritative Changeset visible in any publicly accessible location known to the
+Claimant.
+
+**(b) Conduct a Diligent Search.**
+The Claimant must make a genuine, documented effort to determine whether development
+is continuing elsewhere. A Diligent Search must include all of the following that are
+reasonably practicable:
+
+1. **Mirror and fork search**: check all major publicly accessible code hosting
+   platforms (including but not limited to GitHub, GitLab, Codeberg, Bitbucket, and
+   Sourcehut) for repositories matching the Software's name, description, or
+   contributor identities listed in `CONTRIBUTORS.iprl`;
+2. **Archival search**: check software preservation services (including the Software
+   Heritage archive at softwareheritage.org and the Internet Archive at archive.org)
+   for indexed copies of the repository;
+3. **Package registry search**: check relevant package registries (e.g., npm, PyPI,
+   crates.io, Maven Central, RubyGems) for recent releases of any package known to
+   correspond to the Software;
+4. **Contributor contact**: send written notice to every email address listed in
+   `CONTRIBUTORS.iprl`, informing each Licensed Contributor of the Claimant's intent
+   and requesting confirmation of the Software's status. Contact attempts must allow
+   reasonable delivery (use of an email delivery-confirmation mechanism is recommended);
+5. **Public statement search**: search for any recent public statements (blog posts,
+   social media, mailing lists, issue trackers) by contributors regarding the Software's
+   status.
+
+The Diligent Search must be completed within thirty (30) calendar days before publishing
+the Notice of Dormancy Claim. Search results and contact attempts must be documented
+and retained by the Claimant for a minimum of five (5) years.
+
+**(c) Publish a Notice of Dormancy Claim.**
+The Claimant must publish a Notice of Dormancy Claim that:
+
+1. identifies the Software by name, last-known repository URL, and the SHA and timestamp
+   of the last Authoritative Changeset found;
+2. summarizes the Diligent Search conducted, including platforms searched, contact
+   attempts made and their outcomes, and the dates of each step;
+3. states the Claimant's identity and provides contact information through which
+   Licensed Contributors may reach the Claimant during the Response Period;
+4. states that Fallback License rights will be exercised after expiration of the
+   Response Period absent a valid Active Development Declaration.
+
+The Notice must be published simultaneously in at least **two** of the following
+channels to maximize the probability of reaching contributors regardless of platform
+availability:
+
+- a publicly accessible, indexed web page (e.g., a personal or organizational website,
+  a GitHub Gist, a GitLab snippet, a post on a public developer forum);
+- a comment, issue, or discussion on any accessible mirror or fork of the repository;
+- a filed notice with a copyright registry or IP office in the Claimant's jurisdiction;
+- a post to a recognized, archived, publicly accessible mailing list related to the
+  Software's domain;
+- any other durably indexed, publicly accessible record, including a cryptographically
+  timestamped document (e.g., a hash anchored to a public blockchain or trusted
+  timestamping authority per RFC 3161).
+
+**(d) Observe the Response Period.**
+The Claimant must wait sixty (60) calendar days from the date of the earliest publication
+of the Notice of Dormancy Claim before exercising any Fallback License right.
+
+During the Response Period, the Claimant must monitor the contact addresses provided
+and reasonable public channels for any Active Development Declaration. If an Active
+Development Declaration is published by any Licensed Contributor before expiry of the
+Response Period, the claim is rebutted and the Claimant may not proceed (see
+Section 10.5).
+
+### 10.5 Active Development Declaration (Rebuttal)
+
+Any Licensed Contributor may rebut Apparent Dormancy by publishing an Active
+Development Declaration within the Response Period. A valid Active Development
+Declaration must:
+
+(a) be cryptographically signed with the Licensed Contributor's Signing Key, even if
+    using a new key not yet recorded in a publicly accessible `CONTRIBUTORS.iprl` (in
+    which case the Contributor must provide sufficient evidence to link the key to their
+    identity as recorded in the last accessible `CONTRIBUTORS.iprl`);
+(b) identify a currently accessible repository URL where active development is occurring
+    or will occur, or provide a credible statement of intent to resume development;
+(c) explicitly reference the Claimant's Notice of Dormancy Claim by its publication
+    date and URL.
+
+Upon publication of a valid Active Development Declaration:
+
+(i)  Apparent Dormancy is rebutted as of the date of the Declaration;
+(ii) the Claimant's Notice is invalidated and the Claimant may not exercise Fallback
+     License rights based on it;
+(iii) the Dormancy Period clock resets from the date of the Active Development
+      Declaration; a new Diligent Search Procedure may not be commenced until
+      twenty-four (24) months after the Declaration unless no further Authoritative
+      Changeset has appeared at the declared repository URL.
+
+### 10.6 Confirmed Dormancy — Safe Harbor and Fallback License
+
+If the Response Period expires without a valid Active Development Declaration, Dormancy
+is Confirmed and the Fallback License becomes available to the Claimant.
+
+**Safe Harbor.** A Claimant who has completed the Diligent Search Procedure in good
+faith is granted a full safe harbor against claims under this License by any Licensed
+Contributor arising from the Claimant's exercise of Fallback License rights. The safe
+harbor covers all good-faith reliance on the absence of an Active Development Declaration
+during the Response Period, including any use, modification, or distribution of the
+Software under the Fallback License. The safe harbor does not protect against claims
+arising from bad faith, fraud, or deliberate suppression of knowledge of active
+development.
+
+**Fallback License Grant.** Upon Confirmed or Voluntary Dormancy, the Software is
+irrevocably re-licensed under the **Apache License, Version 2.0** in addition to the
+rights granted under this License. For the avoidance of doubt:
+
+(i)  Licensed Contributors retain copyright ownership of their respective Changesets;
+     the Fallback License is a license, not a transfer of ownership;
 (ii) Licensed Contributors may not use this License to restrict any right granted by
-     the Fallback License once Dormancy has occurred;
-(iii) the Dormancy re-licensing is irrevocable and cannot be reversed even if
-      development subsequently resumes;
-(iv) the Apache License, Version 2.0 attribution requirements apply — downstream users
+     the Fallback License once Dormancy is Confirmed or declared Voluntary;
+(iii) Confirmed Dormancy is irrevocable; subsequent resumption of development does not
+      withdraw the Fallback License from any person who relied on it in good faith;
+(iv) the Apache License, Version 2.0 attribution requirements apply; downstream users
      must preserve copyright notices and `CONTRIBUTORS.iprl`.
 
-### 10.3 Rationale for Apache 2.0 as Fallback License
+**Dormancy Record.** Upon exercising Fallback License rights, the Claimant should
+include a file named `DORMANCY.md` in any distributed copy of the Software, documenting
+the Diligent Search Procedure followed, the Notice of Dormancy Claim publication
+details, and the expiry of the Response Period. This record protects downstream
+recipients and their good faith.
+
+### 10.7 Rationale for Apache 2.0 as Fallback License
 
 The Apache License, Version 2.0 is selected as the Fallback License because:
 
-(a) it satisfies the Open Source Definition of the Open Source Initiative (OSI),
-    ensuring that upon Dormancy the Software becomes genuinely open source and freely
-    usable by the community;
+(a) it is OSI-certified, ensuring the Software becomes genuinely open source upon
+    Dormancy;
 (b) it includes an explicit, royalty-free patent license grant, substantially reducing
     downstream litigation risk;
 (c) it is broadly compatible with GPL v3, LGPL, MIT, BSD, and most other open source
-    licenses, maximizing the reusability of the Software after Dormancy;
-(d) its attribution requirements ensure that Licensed Contributors receive permanent
-    credit for their work even after Dormancy.
+    licenses, maximizing reusability;
+(d) its attribution requirements ensure Licensed Contributors receive permanent credit.
 
-### 10.4 Legal Basis for Time-Triggered Relicensing
+### 10.8 Legal Basis
 
-The Automatic Dormancy mechanism is modeled on the "Change Date" mechanism of the
-Business Source License (BSL 1.1) and analogous time-limited restrictions recognized
-in contract law across multiple jurisdictions. A license grant conditioned on the
-licensor's inaction for a defined period is a valid, enforceable contractual term in
-jurisdictions following both common law and civil law traditions. The twenty-four month
-Dormancy Period is calibrated to be short enough to protect the public interest while
-long enough to accommodate ordinary gaps in active development.
+The Diligent Search Procedure is modeled on the "diligent search" standard established
+by Directive 2012/28/EU of the European Parliament (the EU Orphan Works Directive),
+which requires a good-faith search for rightsholders before exercising rights in
+apparently-ownerless works. The rebuttable presumption structure and Response Period
+are standard instruments in both civil law and common law jurisdictions for balancing
+the interests of rightsholders and the public.
+
+The time-trigger for Apparent Dormancy is modeled on the "Change Date" mechanism of
+the Business Source License (BSL 1.1). The additional due-diligence layer addresses
+a known weakness of pure BSL-style triggers: a project may be alive but temporarily
+inaccessible at its last-known URL, and a purely automatic trigger would be inequitable
+in that scenario.
 
 ---
 

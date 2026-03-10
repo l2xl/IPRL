@@ -1,0 +1,38 @@
+# CONTRIBUTORS.iprl — Licensed Contributor Registry
+# Governed by the Intellectual Property Reserve License (IPRL) v2.0
+# This file is authoritative only when it exists in an Authoritative Changeset
+# (a git commit signed by a Licensed Contributor whose key is listed below).
+#
+# To verify: git verify-commit HEAD
+# To check log: git log --show-signature
+#
+# Last modified: see git log -- CONTRIBUTORS.iprl
+
+license_version = "2.0"
+
+# ---------------------------------------------------------------------------
+# Add entries below using the format defined in IPRL_LICENSE.md Appendix B.
+# Each new contributor must:
+#   1. Be nominated by an existing Licensed Contributor (entry added here).
+#   2. Create their own signed commit explicitly accepting IPRL v2.0.
+#      That commit SHA goes in accepted_sha below.
+# ---------------------------------------------------------------------------
+
+# [[contributor]]
+# name         = "Full Legal Name"
+# email        = ["email@example.com"]
+# admitted     = "YYYY-MM-DD"
+# accepted_sha = "<sha of contributor's own acceptance commit>"
+#
+#   [[contributor.signing_keys]]
+#   format      = "gpg"
+#   fingerprint = "XXXX XXXX XXXX XXXX XXXX  XXXX XXXX XXXX XXXX XXXX"
+#   pubkey      = """
+# -----BEGIN PGP PUBLIC KEY BLOCK-----
+# [ASCII-armored key here]
+# -----END PGP PUBLIC KEY BLOCK-----
+# """
+#
+#   [[contributor.signing_keys]]
+#   format = "ssh"
+#   pubkey = "ssh-ed25519 AAAA... comment"

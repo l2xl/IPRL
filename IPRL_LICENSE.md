@@ -284,19 +284,7 @@ A Ratifying Licensed Contributor assumes responsibility for the content of the R
 Changesets as part of the canonical Software history. The External Changeset author acquires
 no additional rights through Ratification.
 
-### 5.3 Ratification Deadline
-
-An External Changeset that is present in any publicly accessible repository and is not
-Ratified within **ninety (90) calendar days** of its first public appearance must be
-removed from the canonical history by any Licensed Contributor. Knowingly maintaining
-or distributing the Software in a state containing unratified, overdue External Changesets
-constitutes a breach of this License by the maintaining party.
-
-External Changesets in private branches or forks, or in branches not yet merged into the
-canonical main branch, are not subject to this deadline until the branch is merged or
-publicly distributed as part of the Software.
-
-### 5.4 Rationale
+### 5.3 Rationale
 
 The Ratification mechanism allows external contributions (e.g., bug reports with patches,
 community pull requests) to be accepted without requiring contributors to formally join

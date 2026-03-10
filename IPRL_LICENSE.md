@@ -45,28 +45,34 @@ now existing or developed in the future. This License does not restrict the sign
 algorithm, key type, or key size beyond the minimum required for cryptographic
 verifiability against the recorded public credential.
 
-**"Authoritative Changeset"** means a Changeset that is cryptographically signed by a
-Licensed Contributor using a Signing Key registered in the Contributor Registry at the
-time the Changeset is made, such that the signature can be verified using standard VCS
-tooling (e.g., `git verify-commit`) against the public key recorded in the Contributor
-Registry.
+**"Authoritative Contribution"** means a contribution to the Software made by a Licensed
+Contributor using a Signing Key registered in the Contributor Registry at the time the
+contribution is made, such that the signature can be independently verified against the
+public key recorded in the Contributor Registry. Where the Software is managed in a
+Version Control System, an Authoritative Contribution takes the form of a
+cryptographically signed Changeset; where the Software is distributed outside a VCS, it
+takes the form of a released artifact accompanied by a detached cryptographic signature
+or equivalent verifiable credential.
 
-**"External Changeset"** means any Changeset that is not an Authoritative Changeset —
-i.e., it is unsigned, or signed with a key not registered in the Contributor Registry.
+**"External Contribution"** means any contribution to the Software — whether a VCS
+Changeset, patch, file, or other addition — that is not an Authoritative Contribution,
+i.e., it is made by a person whose Signing Key is not registered in the Contributor
+Registry at the time of contribution.
 
-**"Ratified Changeset"** means an External Changeset that has been explicitly accepted
-into canonical history by an Authoritative Changeset in accordance with Section 5.
+**"Ratified Contribution"** means an External Contribution that has been explicitly
+accepted as part of the Software by an Authoritative Contribution in accordance with
+Section 5.
 
-**"Contributor Registry"** means the authoritative, VCS-tracked list of Licensed
-Contributors and their public signing credentials, maintained in a file named
-`CONTRIBUTORS` in the root of the Software repository. The minimum required content
-is defined in Appendix B; the file format is not mandated by this License.
+**"Contributor Registry"** means the authoritative record of Licensed Contributors and
+their public signing credentials, maintained in a file named `CONTRIBUTORS` in the root
+of the Software. The minimum required content is defined in Appendix B; the file format
+is not mandated by this License.
 
 **"Licensed Contributor"** means any natural person or legal entity whose Signing Key is
 recorded in the current Contributor Registry at the time a relevant Changeset is made.
 
 **"Founding Contributor"** means the first Licensed Contributor to apply this License
-to the Software, whose identity is established by the Foundational Changeset described
+to the Software, whose identity is established by the Foundational Contribution described
 in Section 3.1.
 
 **"Contributor Pool"** means the set of all current Licensed Contributors.
@@ -108,37 +114,36 @@ impede legitimate study, non-commercial use, or the flow of knowledge.
 
 ### 2.2 Scope
 
-This License governs the entire Software repository and all Changesets therein from the
-date of the Foundational Signature (Section 3.1). It applies regardless of the platform
-on which the VCS repository is hosted and operates on the raw VCS data, requiring no
-platform-specific features.
+This License governs the entire Software and all Authoritative Contributions therein from
+the date of the Foundational Contribution (Section 3.1). It applies regardless of the
+medium or platform through which the Software is distributed or managed.
 
 ---
 
 ## 3. Identification of Rightsholders
 
-### 3.1 Foundational Changeset
+### 3.1 Foundational Contribution
 
-The Founding Contributor establishes this License by creating the **Foundational
-Changeset**: an Authoritative Changeset that introduces, at minimum:
+The Founding Contributor establishes this License by making the **Foundational
+Contribution**: an Authoritative Contribution that introduces, at minimum:
 
 (a) A file `LICENSE.md` containing the full text of this License; and
 (b) The initial `CONTRIBUTORS` file recording the Founding Contributor's entry.
 
-Because the Foundational Changeset is itself cryptographically signed by the Founding
-Contributor, the Changeset signature is the proof of authorship and the acceptance of
-this License. A separate detached signature file (`LICENSE.md.asc`) is **optional**:
-it may be included for the convenience of recipients who verify the License text outside
-a VCS context, but its presence or absence does not affect the validity of this License.
+Because the Foundational Contribution is itself cryptographically signed by the Founding
+Contributor, the signature is the proof of authorship and the acceptance of this License.
+A separate detached signature file (`LICENSE.md.asc`) is **optional**: it may be
+included for the convenience of recipients who verify the License text outside a VCS
+context, but its presence or absence does not affect the validity of this License.
 
 The Founding Contributor's Signing Key must be capable of verification at the time of
-the Foundational Changeset and for a reasonable period thereafter.
+the Foundational Contribution and for a reasonable period thereafter.
 
-### 3.2 Changeset-Based Attribution (VCS Mode)
+### 3.2 VCS-Based Attribution
 
 When the Software is managed in a VCS, a Licensed Contributor's authorship of any
-content is established by the existence of one or more Authoritative Changesets
-introducing or modifying that content. The Authoritative Changeset signature is the
+content is established by the existence of one or more Authoritative Contributions
+introducing or modifying that content. The Authoritative Contribution signature is the
 cryptographic proof of authorship and the operative license declaration for that content.
 
 **Per-file license headers are required** in all source files, but in VCS Mode the
@@ -147,14 +152,10 @@ contributor's public key or signing credential, because that information is reco
 in the `CONTRIBUTORS` file within the VCS history. The required header format is
 defined in Appendix A.
 
-To configure git commit signing for use with this License:
-
-```
-git config user.signingkey <KEY-ID-OR-PATH>
-git config commit.gpgsign true
-```
-
-Signatures are verifiable using `git verify-commit <sha>` or `git log --show-signature`.
+> **[VCS Note]** To configure signed commits in Git: set `user.signingkey` and
+> `commit.gpgsign = true` in your git config. Signatures are verifiable with
+> `git verify-commit <sha>` or `git log --show-signature`. Other VCS implementations
+> use equivalent signing mechanisms.
 
 ### 3.3 Snapshot / Out-of-VCS Distribution Mode
 
@@ -177,11 +178,11 @@ The use of a cryptographic Signing Key does not limit a Licensed Contributor's a
 to assert exclusive rights by other legally accepted means. In the event of key loss,
 revocation, or compromise:
 
-(a) The Licensed Contributor should create a new Authoritative Changeset with a new
+(a) The Licensed Contributor should make a new Authoritative Contribution with a new
     Signing Key updating their entry in `CONTRIBUTORS`, signed (if possible) with the
     old key or countersigned by another Licensed Contributor;
-(b) Authorship of prior Authoritative Changesets remains valid and provable by the
-    immutable VCS history and the content of those Changesets;
+(b) Authorship of prior Authoritative Contributions remains valid and provable by the
+    immutable record of those contributions and the cryptographic evidence they carry;
 (c) A statutory declaration or other legally sufficient evidence of identity may be
     used to supplement cryptographic evidence in legal proceedings.
 
@@ -200,16 +201,16 @@ Licensed Contributor, the information specified in Appendix B.
 A person or entity is admitted to the Contributor Pool only when **both** of the
 following conditions are satisfied:
 
-(a) **Nomination**: An existing Licensed Contributor creates an Authoritative Changeset
+(a) **Nomination**: An existing Licensed Contributor makes an Authoritative Contribution
     that adds the nominee's entry (including their Signing Key) to `CONTRIBUTORS`; and
 
 (b) **Acceptance**: The nominee, using their own Signing Key (which must now match the
-    key recorded under their entry), creates a subsequent Authoritative Changeset that
-    contains an explicit written acceptance of the terms of this License.
+    key recorded under their entry), makes a subsequent Authoritative Contribution
+    containing an explicit written acceptance of the terms of this License.
 
-An entry in `CONTRIBUTORS` without a corresponding acceptance Changeset from the
-nominee does not constitute admission. A nominee's acceptance Changeset simultaneously
-constitutes their grant under Section 4.4.
+An entry in `CONTRIBUTORS` without a corresponding acceptance Authoritative Contribution
+from the nominee does not constitute admission. A nominee's acceptance Authoritative
+Contribution simultaneously constitutes their grant under Section 4.4.
 
 ### 4.3 Platform-Independent Registry
 
@@ -219,8 +220,8 @@ do **not** automatically grant or imply Licensed Contributor status. Such lists 
 serve as corroborating evidence of identity and intent but have no independent legal
 effect under this License.
 
-This design ensures that IPRL operates identically on any raw git repository, regardless
-of hosting platform.
+This design ensures that IPRL is platform-independent: Pool membership is determined
+solely by the Contributor Registry, not by access controls on any hosting service.
 
 ### 4.4 Intra-Pool Mutual Rights Grant
 
@@ -229,7 +230,7 @@ other current and future Licensed Contributor a **perpetual, worldwide, royalty-
 license to:
 
 (a) use, copy, modify, adapt, and create derivative works of the entire Software,
-    including all Changesets contributed by the granting Contributor;
+    including all contributions made by the granting Contributor;
 (b) compile, execute, deploy, and operate the Software for any commercial or
     non-commercial purpose;
 (c) sublicense the Software to third parties solely under the terms of this License
@@ -237,38 +238,39 @@ license to:
 
 This intra-pool grant is the mechanism by which collaborative development occurs without
 fragmenting IP ownership. Each Licensed Contributor retains full copyright ownership of
-their contributed Changesets; the grant is a license, not a transfer. The mutual,
+their Authoritative Contributions; the grant is a license, not a transfer. The mutual,
 exclusive-as-to-the-world nature of the grant preserves the IP value of the Software:
 no person outside the Pool acquires modification or commercial-use rights, while every
 Pool member has full operational rights.
 
 ### 4.5 Withdrawal of a Licensed Contributor
 
-A Licensed Contributor may withdraw from the Pool by creating an Authoritative Changeset
+A Licensed Contributor may withdraw from the Pool by making an Authoritative Contribution
 explicitly declaring their withdrawal and updating `CONTRIBUTORS`. Withdrawal:
 
-(a) does not retroactively revoke rights in Changesets made prior to withdrawal;
+(a) does not retroactively revoke rights in Authoritative Contributions made prior to withdrawal;
 (b) does not affect the intra-pool grants already given, which remain irrevocable;
-(c) terminates that Contributor's right to make future Authoritative Changesets binding
+(c) terminates that Contributor's right to make future Authoritative Contributions binding
     on the Pool.
 
 ### 4.6 Removal by the Pool
 
-A Licensed Contributor who has made no Authoritative Changeset for twelve (12) or more
-consecutive calendar months may be removed from the Pool by an Authoritative Changeset
+A Licensed Contributor who has made no Authoritative Contribution for twelve (12) or more
+consecutive calendar months may be removed from the Pool by an Authoritative Contribution
 of any remaining Licensed Contributor, which must state the grounds and the period of
-inactivity. Removal is effective upon creation of a subsequent Authoritative Changeset
-by any other Licensed Contributor confirming the removal (two-step consensus). Removal
-does not retroactively affect the removed Contributor's ownership of prior Changesets.
+inactivity. Removal is effective upon a subsequent Authoritative Contribution by any
+other Licensed Contributor confirming the removal (two-step consensus). Removal does not
+retroactively affect the removed Contributor's ownership of prior Authoritative
+Contributions.
 
 ---
 
-## 5. External Changesets
+## 5. External Contributions
 
 ### 5.1 Effect on Authorship
 
-An External Changeset does not grant any intellectual property rights to its author under
-this License. The author of an External Changeset:
+An External Contribution does not grant any intellectual property rights to its author
+under this License. The author of an External Contribution:
 
 (a) does not become a Licensed Contributor;
 (b) does not acquire any rights to the Software beyond those granted to Users under
@@ -277,20 +279,22 @@ this License. The author of an External Changeset:
 
 ### 5.2 Ratification
 
-An External Changeset is Ratified — and thereby incorporated into the canonical Software
-history without constituting a license breach — when a Licensed Contributor creates an
-Authoritative Changeset that:
+An External Contribution is Ratified — and thereby incorporated into the canonical
+Software history without constituting a license breach — when a Licensed Contributor
+makes an Authoritative Contribution that:
 
-(a) **Is a direct successor**: the Authoritative Changeset's parent (in VCS graph terms)
-    is the External Changeset or an unbroken chain of External Changesets; or
+(a) **Directly incorporates**: the Authoritative Contribution directly incorporates or
+    succeeds the External Contribution within the canonical Software history,
+    establishing an unambiguous record of acceptance; or
 
-(b) **Contains an explicit reference**: the Authoritative Changeset explicitly identifies
-    the External Changeset by its cryptographic identifier (e.g., git commit SHA) and
-    includes a statement of acceptance (e.g., "Ratified: <sha>").
+(b) **Contains an explicit reference**: the Authoritative Contribution explicitly
+    identifies the External Contribution by sufficient designation (e.g., a cryptographic
+    identifier, patch reference, or other unambiguous description) and includes a
+    statement of acceptance (e.g., "Ratified: <identifier>").
 
 A Ratifying Licensed Contributor assumes responsibility for the content of the Ratified
-Changesets as part of the canonical Software history. The External Changeset author acquires
-no additional rights through Ratification.
+Contribution as part of the canonical Software history. The External Contribution author
+acquires no additional rights through Ratification.
 
 ### 5.3 Rationale
 
@@ -318,7 +322,7 @@ non-sublicensable, irrevocable (except as provided in Section 9) license to:
     that all of the following conditions are met:
 
     (i)   where distributed via a Version Control System: the complete record of
-          Authoritative Changesets, including all cryptographic signatures, is preserved
+          Authoritative Contributions, including all cryptographic signatures, is preserved
           intact and independently verifiable; where distributed outside a VCS (e.g., as
           a source archive or binary), the requirements of Section 3.3 are satisfied;
     (ii)  all per-file license headers are preserved intact and unmodified;
@@ -344,8 +348,8 @@ You are expressly prohibited from:
     transferring Your rights in the Software to any third party;
 
 (c) **Tampering with Attribution**: removing, obscuring, forging, or altering any license
-    headers, Signing Key data, Authoritative Changeset signatures, `CONTRIBUTORS`,
-    `LICENSE.md`, or `LICENSE.md.asc` (if present);
+    headers, Signing Key data, cryptographic signatures on Authoritative Contributions,
+    `CONTRIBUTORS`, `LICENSE.md`, or `LICENSE.md.asc` (if present);
 
 (d) **False Ownership Claims**: using the Software in any manner that could be construed
     as asserting ownership over it by a party who is not a Licensed Contributor.
@@ -357,7 +361,7 @@ You are expressly prohibited from:
 ### 8.1 Ownership Preserved
 
 All copyright and intellectual property rights in each Licensed Contributor's
-Changesets remain exclusively with that Licensed Contributor. This License does not
+Authoritative Contributions remain exclusively with that Licensed Contributor. This License does not
 transfer ownership or any exclusive right to any person or entity other than through
 the intra-pool mutual grant of Section 4.4.
 
@@ -381,7 +385,7 @@ legal entity (e.g., as a founder's IP contribution upon company formation):
 (b) The receiving legal entity steps into the shoes of that Licensed Contributor for
     purposes of the intra-pool mutual grant, becoming bound by this License as a
     Licensed Contributor;
-(c) The contributing Licensed Contributor must create an Authoritative Changeset
+(c) The contributing Licensed Contributor must make an Authoritative Contribution
     updating `CONTRIBUTORS` to record the legal entity as successor-in-interest
     to their entry, including the legal entity's authorized Signing Key(s).
 
@@ -524,7 +528,7 @@ language-appropriate comment syntax. Two forms are defined:
 ### A.1 VCS Mode Header (minimum required in repositories with full commit history)
 
 The VCS Mode header is a human-readable notice. The cryptographic proof of authorship
-is in the Authoritative Changeset signature; the header does not need to embed key
+is in the Authoritative Contribution signature; the header does not need to embed key
 material.
 
 ```
@@ -562,9 +566,10 @@ independent verification.
 ## Appendix B: CONTRIBUTORS File
 
 The `CONTRIBUTORS` file is the Contributor Registry defined in Section 1. It must be
-maintained as an Authoritative Changeset — any modification must be in a Changeset
-signed by a Licensed Contributor. The file is authenticated by the VCS signature of
-the Changeset that introduces or modifies it; no separate signature file is required.
+maintained through Authoritative Contributions — any modification must be made via an
+Authoritative Contribution by a Licensed Contributor. The file is authenticated by the
+signature of the Authoritative Contribution that introduces or modifies it; no separate
+signature file is required.
 
 **Structure:** The file opens with the standard IPRL license header (same form as
 Appendix A.1), followed by one entry per Licensed Contributor.

@@ -9,15 +9,16 @@ This License exists for a single primary purpose: to preserve the exclusive inte
 property rights of its authors so that the Software may be used as a verifiable,
 non-material asset — including as a founder's contribution when establishing a legal
 entity, as an intangible asset in business valuation, or as registered IP in official
-filings — while simultaneously making the source code publicly available for study and
-non-commercial execution.
+filings — while simultaneously making the source code publicly available for study,
+execution, and commercial use in its unmodified form.
 
-This License is a **source-available** license. It is intentionally not an Open Source
-license under the Open Source Initiative (OSI) definition, because the modification and
-commercial-use restrictions of Sections 6 and 7 are essential to its IP-preservation
-purpose. A time-triggered, irrevocable transition to a fully Open Source license is
-provided in Section 10 (Dormancy and Fallback) to protect the public interest in the
-event of development cessation. The relationship to the Open Source Definition is
+This License is a **modification-restricted source-available** license. It is
+intentionally not an Open Source license under the Open Source Initiative (OSI)
+definition because the prohibition on modification and derivative works (Section 7(a))
+is essential to its IP-preservation purpose. Commercial use of the unmodified Software
+is explicitly permitted. A time-triggered, irrevocable transition to a fully Open Source
+license is provided in Section 10 (Dormancy and Fallback) to protect the public interest
+in the event of development cessation. The relationship to the Open Source Definition is
 explained in Appendix D.
 
 ---
@@ -310,14 +311,15 @@ Subject to all conditions and restrictions of this License, the Licensed Contrib
 collectively grant to You a worldwide, royalty-free, non-exclusive, non-transferable,
 non-sublicensable, irrevocable (except as provided in Section 9) license to:
 
-(a) **Read and Study**: access, read, copy, and analyze the source code for any
-    non-commercial educational or research purpose;
+(a) **Read and Study**: access, read, copy, and analyze the source code for any purpose,
+    commercial or non-commercial;
 
 (b) **Compile and Execute**: compile the Software from source and execute or run the
-    resulting binary or interpreted program for your own internal, non-commercial use;
+    resulting binary or interpreted program for any purpose, commercial or non-commercial;
 
 (c) **Redistribute Unmodified**: distribute verbatim, unmodified copies of the Software
-    in source or compiled form, provided that all of the following conditions are met:
+    in source or compiled form for any purpose, commercial or non-commercial, provided
+    that all of the following conditions are met:
 
     (i)   the full VCS history, including all Authoritative Changeset signatures, is
           preserved and cryptographically verifiable in any distributed VCS repository;
@@ -330,9 +332,6 @@ non-sublicensable, irrevocable (except as provided in Section 9) license to:
 **This License does not grant any right to modify, adapt, translate, or create derivative
 works of the Software.**
 
-**This License does not grant any right to use the Software or any part thereof for
-commercial purposes.**
-
 ---
 
 ## 7. Restrictions
@@ -343,12 +342,7 @@ You are expressly prohibited from:
     of creating competitive derivative works, or creating derivative works of the Software
     in any form;
 
-(b) **Commercial Use**: using the Software or any portion thereof for commercial purposes,
-    including but not limited to: incorporating it into a commercial product or service;
-    using it to provide services to paying customers; using it to gain competitive
-    commercial advantage; or deploying it in a production environment operated for profit;
-
-(c) **Transfer of Rights**: sublicensing, selling, renting, leasing, or otherwise
+(b) **Transfer of Rights**: sublicensing, selling, renting, leasing, or otherwise
     transferring Your rights in the Software to any third party;
 
 (d) **Tampering with Attribution**: removing, obscuring, forging, or altering any license
@@ -808,26 +802,25 @@ The Open Source Initiative (OSI) Open Source Definition (OSD) requires, among ot
 criteria, that a license permit modification and the creation of derivative works
 (OSD criterion 3) and not restrict use in any field of endeavor (OSD criterion 6).
 
-**This License intentionally does not comply with OSD criteria 3 and 6** because:
+**This License intentionally does not comply with OSD criterion 3** (modification and
+derivative works), for the following reason:
 
 - The prohibition on modification (Section 7(a)) is essential to preserve the
-  Software's status as a defined, attributable IP asset. Modification rights, if
-  granted universally, would make it impossible to maintain the Software as a bounded
-  object of IP for registration and valuation purposes.
+  Software's status as a defined, attributable IP asset. If modification rights were
+  granted universally, the Software could not be maintained as a bounded, identifiable
+  object of IP for registration, valuation, and founder-contribution purposes.
 
-- The prohibition on commercial use (Section 7(b)) is essential to preserve the
-  exclusive commercial value of the Software for the Licensed Contributors, which is
-  the foundation of its use as a founder's contribution.
+This License **does comply with OSD criterion 6** (no restriction on fields of endeavor):
+commercial use of the unmodified Software is explicitly and unconditionally permitted
+under Section 6.
 
-These restrictions are, however, **time-limited**: upon Dormancy (Section 10), the
+The remaining single-criterion non-compliance (OSD criterion 3) is structurally
+analogous to the Creative Commons Attribution-NoDerivatives (CC BY-ND) family of
+licenses applied to software — freely usable and commercially deployable, but not
+modifiable by those outside the Contributor Pool. Upon Dormancy (Section 10), the
 Software automatically becomes governed by the Apache License, Version 2.0, which is
-fully OSI-certified. IPRL is therefore best characterized as a **pre-open-source
+fully OSI-certified. IPRL is therefore best characterized as a **no-derivatives
 source-available license with a built-in open source transition**.
-
-Comparable licenses using similar time-limited or field-restricted structures include:
-the Business Source License (BSL 1.1), the Server Side Public License (SSPL), the
-Commons Clause addendum, and various "Functional Source Licenses." None of these are
-OSI-approved, as is consistent with the structure of IPRL.
 
 If OSI compliance from day one is required for a particular use case, the parties should
 negotiate a separate license with the Licensed Contributors or await Dormancy.

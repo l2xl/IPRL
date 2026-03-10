@@ -733,115 +733,72 @@ independent verification.
 ## Appendix B: CONTRIBUTORS File
 
 The `CONTRIBUTORS` file is the Contributor Registry defined in Section 1. It must be
-maintained as an Authoritative Changeset (i.e., any modification to it must be in a
-commit signed by a Licensed Contributor). Because the file is authenticated by the VCS
-signature of the Changeset that introduces or modifies it, no separate signature file
-for `CONTRIBUTORS` is required.
+maintained as an Authoritative Changeset — any modification must be in a Changeset
+signed by a Licensed Contributor. The file is authenticated by the VCS signature of
+the Changeset that introduces or modifies it; no separate signature file is required.
 
-**Required information per contributor:**
+**Structure:** The file opens with the standard IPRL license header (same form as
+Appendix A.1), followed by one entry per Licensed Contributor.
 
-1. Full legal name or recognized pseudonym;
-2. One or more contact email addresses;
-3. Date of admission (ISO 8601);
-4. The SHA of the contributor's own acceptance Changeset (Section 4.2(b));
-5. One or more public signing credentials, sufficient for signature verification.
-   Any credential type is accepted (OpenPGP public key, SSH public key, X.509
-   certificate, or any other verifiable public credential). Multiple credential types
-   for a single contributor are encouraged for resilience against algorithm obsolescence.
+**Each entry consists of:**
+1. Zero or more lines of optional, free-form identification information — any
+   human-readable text the contributor chooses, such as a real name, pseudonym,
+   email address, or any other data (including opaque identifiers like hashes)
+   that the contributor may later use to prove their real-world identity;
+2. The contributor's public signing credential in its native format.
 
-**Format:** The `CONTRIBUTORS` file format is not mandated by this License. Any
-human-readable, plain-text format (plain text, Markdown, TOML, YAML, etc.) is
-acceptable, provided the required information above is unambiguously present and the
-file is maintained as described. The following is one example using plain text:
+**The public signing credential is the only mandatory element per entry.** All
+identification text is voluntary. The file imposes no schema, field names, or
+ordering beyond this.
+
+Inline comment markers (`#`) may be used to distinguish identification text from key
+material, but any plain-text layout that makes the association between identification
+and key unambiguous is acceptable. Public keys for single-line schemes (e.g., SSH) may
+appear one per line. Block-format keys (e.g., OpenPGP) span multiple lines in their
+native armored format.
+
+Example:
 
 ```
-CONTRIBUTORS — Licensed Contributor Registry
-Governed by: Intellectual Property Reserve License (IPRL) v2.0
-This file is authoritative only as part of an Authoritative Changeset.
+# Distributed under the Intellectual Property Reserve License (IPRL) v2.0
+# Licensed Contributors:
 
----
+# Alice Smith <alice@example.com>
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI...
 
-Name:           Alice Smith
-Email:          alice@example.com
-Admitted:       2024-01-15
-Accepted SHA:   abc123def456
-Signing keys:
-  gpg:  ABCD 1234 5678 9ABC DEF0  1234 5678 9ABC DEAD BEEF
-        (full key: -----BEGIN PGP PUBLIC KEY BLOCK----- ...)
-  ssh:  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI...
+# Bob Jones  bob@work.example.com
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+[key data]
+-----END PGP PUBLIC KEY BLOCK-----
 
----
+# pseudonym: ghost  sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+ssh-ed25519 AAAAC3Nza...
 
-Name:           Bob Jones
-Email:          bob@example.com, bob@work.example.com
-Admitted:       2024-03-01
-Accepted SHA:   fedcba987654
-Signing keys:
-  gpg:  1234 5678 9ABC DEF0 1234  5678 9ABC DEF0 CAFE BABE
-        (full key: -----BEGIN PGP PUBLIC KEY BLOCK----- ...)
+# (key only, no identification — the contributor's identity is their key)
+ssh-ed25519 AAAAC3Nzb...
 ```
 
 ---
 
-## Appendix C: Verification Cheat Sheet
+## Appendix C: Verification (Informative)
 
-**Verify a single commit:**
-```bash
-git verify-commit <sha>
-git verify-commit --verbose <sha>
-```
+*This appendix is informative and non-normative. It describes the verification
+concept; specific tooling commands depend on the VCS in use.*
 
-**Show signatures in log:**
-```bash
-git log --show-signature
-git log --pretty="%h %G? %GS %s"
-# %G? codes: G=good, B=bad, U=unknown, X=expired key, R=revoked key, N=no signature
-```
+To confirm that a Changeset is an Authoritative Changeset:
 
-**Extract signer fingerprint and cross-check CONTRIBUTORS:**
-```bash
-git log --pretty="%H %GF %GS" | head -20
-```
+1. Use the VCS's native commit signature verification facility to confirm that the
+   Changeset carries a valid cryptographic signature that has not been tampered with.
+2. Locate the public signing credential reported by that verification in the
+   `CONTRIBUTORS` file as it existed in the repository at the time of that Changeset.
+   If the credential is present, the Changeset is Authoritative.
 
-**Verify the optional LICENSE.md.asc detached signature (if present):**
-```bash
-# GPG:
-gpg --verify LICENSE.md.asc LICENSE.md
-# or for any signing tool that produced the .asc:
-# check the signature type from the file header and use the appropriate verifier
-```
+To confirm that the `CONTRIBUTORS` file itself has not been tampered with, verify the
+signature of the Changeset that last modified it using the same procedure.
 
-**Find External Changesets (unsigned or unregistered-key commits) in a range:**
-```bash
-git log --pretty="%H %G?" main | awk '$2 == "N" || $2 == "B" || $2 == "U" {print $1}'
-# N = no signature (External Changeset)
-# B = bad signature (potentially tampered)
-# U = good signature but key not in local trust store (verify against CONTRIBUTORS manually)
-```
-
-**Configure automatic commit signing — GPG/OpenPGP:**
-```bash
-git config --global user.signingkey <KEY-FINGERPRINT>
-git config --global commit.gpgsign true
-```
-
-**Configure automatic commit signing — SSH:**
-```bash
-git config --global gpg.format ssh
-git config --global user.signingkey ~/.ssh/id_ed25519.pub
-git config --global commit.gpgsign true
-# For local verification of SSH-signed commits, also set:
-git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
-# allowed_signers format: "email@example.com namespaces=\"git\" ssh-ed25519 AAAA..."
-```
-
-**Configure automatic commit signing — S/MIME (X.509):**
-```bash
-git config --global gpg.format x509
-git config --global gpg.x509.program smimesign
-git config --global user.signingkey <CERTIFICATE-ID>
-git config --global commit.gpgsign true
-```
+Consult your VCS documentation for the specific commands used to inspect and verify
+Changeset signatures. The optional `LICENSE.md.asc` file, if present, can be verified
+using the appropriate standalone tool for its signature type.
 
 ---
 

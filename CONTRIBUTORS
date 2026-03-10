@@ -1,36 +1,14 @@
-# CONTRIBUTORS — Licensed Contributor Registry
-# Governed by: Intellectual Property Reserve License (IPRL) v2.0
+# Distributed under the Intellectual Property Reserve License (IPRL) v2.0
+# Licensed Contributors:
 #
-# This file is the Contributor Registry defined in Section 1 of IPRL.
-# It is authoritative only as part of an Authoritative Changeset — that is,
-# a commit signed by a Licensed Contributor whose key is already recorded here.
-#
-# To verify the signing chain:  git log --show-signature -- CONTRIBUTORS
-# To check a specific commit:   git verify-commit <sha>
-#
-# Format: any plain-text format is acceptable. Required fields per contributor:
-#   Name, Email, Admitted (ISO 8601 date), Accepted SHA, Signing key(s)
-#
-# Signing key types accepted: OpenPGP/GPG, SSH, X.509, or any other scheme
-# supported by the VCS or applicable cryptographic standard.
-# Multiple key types per contributor are encouraged for long-term resilience.
-#
-# Last modified: see `git log -- CONTRIBUTORS`
+# Each entry below is a public signing credential, optionally preceded by
+# free-form identification text (name, pseudonym, email, hash, or anything
+# the contributor chooses). The public key is the only mandatory element.
+# This file is authoritative only as part of an Authoritative Changeset.
 
 # ---------------------------------------------------------------------------
-# Add entries below. Each new contributor must:
-#   1. Be nominated by an existing Licensed Contributor (entry added here
-#      in a signed commit by the nominating contributor).
-#   2. Create their own signed commit explicitly accepting IPRL v2.0.
-#      Record the SHA of that acceptance commit in "Accepted SHA" below.
+# Add entries here. To join the pool:
+#   1. An existing Licensed Contributor adds your public key (this file,
+#      in their signed commit).
+#   2. You create your own signed commit explicitly accepting IPRL v2.0.
 # ---------------------------------------------------------------------------
-
-# Example entry:
-#
-# Name:         Alice Smith
-# Email:        alice@example.com
-# Admitted:     2024-01-15
-# Accepted SHA: abc123def456  (SHA of Alice's own IPRL acceptance commit)
-# Signing keys:
-#   gpg: ABCD 1234 5678 9ABC DEF0  1234 5678 9ABC DEAD BEEF
-#   ssh: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI...

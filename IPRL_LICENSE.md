@@ -5,18 +5,16 @@
 
 ## Preamble
 
-This License exists for a single primary purpose: to preserve the exclusive intellectual
+This License is intended to preserve the exclusive intellectual
 property rights of its authors so that the Software may be used as a verifiable,
 non-material asset — including as a founder's contribution when establishing a legal
 entity, as an intangible asset in business valuation, or as registered IP in official
-filings — while simultaneously making the source code publicly available for study,
-execution, and commercial use in its unmodified form.
+filings — while simultaneously making the source code publicly available.
 
 This License is a **modification-restricted source-available** license. It is
 intentionally not an Open Source license under the Open Source Initiative (OSI)
 definition because the prohibition on modification and derivative works (Section 7(a))
-is essential to its IP-preservation purpose. Commercial use of the unmodified Software
-is explicitly permitted. A time-triggered, irrevocable transition to a fully Open Source
+is essential to its IP-preservation purpose. A time-triggered transition to a fully Open Source
 license is provided in Section 10 (Dormancy and Fallback) to protect the public interest
 in the event of development cessation. The relationship to the Open Source Definition is
 explained in Appendix C.
@@ -151,11 +149,6 @@ header serves as a human-readable notice only — it does not need to embed the
 contributor's public key or signing credential, because that information is recorded
 in the `CONTRIBUTORS` file within the VCS history. The required header format is
 defined in Appendix A.
-
-> **[VCS Note]** To configure signed commits in Git: set `user.signingkey` and
-> `commit.gpgsign = true` in your git config. Signatures are verifiable with
-> `git verify-commit <sha>` or `git log --show-signature`. Other VCS implementations
-> use equivalent signing mechanisms.
 
 ### 3.3 Snapshot / Out-of-VCS Distribution Mode
 

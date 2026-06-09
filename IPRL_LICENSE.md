@@ -1,636 +1,129 @@
 # Intellectual Property Reserve License (IPRL)
+
 **Version 2.0**
 
----
-
-## Preamble
-
-This License is intended to preserve the exclusive intellectual
-property rights of its authors so that the Software may be used as a verifiable,
-non-material asset — including as a founder's contribution when establishing a legal
-entity, as an intangible asset in business valuation, or as registered IP in official
-filings — while simultaneously making the source code publicly available.
-
-This License is a **modification-restricted source-available** license. It is
-intentionally not an Open Source license under the Open Source Initiative (OSI)
-definition because the prohibition on modification and derivative works (Section 7(a))
-is essential to its IP-preservation purpose. A time-triggered transition to a fully Open Source
-license is provided in Section 10 (Dormancy and Fallback) to protect the public interest
-in the event of development cessation. The relationship to the Open Source Definition is
-explained in Appendix C.
+## Purpose
 
----
+A work published under this License grows by increments, and every increment is
+published signed. The public record of signed increments is itself the proof of who
+created each part of the work and who together created the whole. The Authors keep all
+intellectual property in the work — each in their own increments, all of them in the
+sum — so that the work remains a defined, attributable, verifiable asset: fit for
+registration, valuation, separate licensing, or contribution as capital to a legal
+entity, while staying open for anyone to read, run, and share unchanged. This is a
+source-available license, not an Open Source license: the right to change the work is
+the right the Authors keep.
 
-## 1. Definitions
+## Terms
 
-**"Software"** means the collection of source code, documentation, data, and other
-creative works governed by this License, as recorded in a Version Control System or
-otherwise distributed.
+**Publication** means a work of authorship made publicly available under this License:
+a first work, every later increment that adds to or revises what was published before,
+and the cumulative work that the increments up to any point together form. This License
+applies to a Publication at every level — to each increment by itself and to every
+whole composed of increments.
 
-**"Version Control System" (VCS)** means any system that records a history of changes
-to files with author attribution, including but not limited to Git, Mercurial, and SVN.
+**Signed Publication** means a Publication bearing the signature of its maker: a record
+affixed to or logically associated with the Publication that identifies the maker,
+expresses the maker's intent to assert authorship and to publish under this License,
+and can be verified by anyone against a credential the maker has made public.
 
-**"Changeset"** means a discrete, atomic unit of change in a VCS — including a git
-commit, Mercurial changeset, or SVN revision — that records modifications to the
-Software with a cryptographically verifiable author identity.
+**Author** (also **Contributor**) means the maker of the first Signed Publication of a
+work, and every person or entity whose own Signed Publication an Author has afterwards
+incorporated into, or built upon in, a later Signed Publication.
 
-**"Signing Key"** means any asymmetric cryptographic key pair or credential capable of
-producing a verifiable digital signature on Changesets or files, where the public
-portion or verifying credential is recorded in the Contributor Registry. This includes,
-without limitation, OpenPGP/GPG keys, SSH keys, X.509 certificates, and any other
-signing scheme supported by the VCS in use or by an applicable cryptographic standard
-now existing or developed in the future. This License does not restrict the signing
-algorithm, key type, or key size beyond the minimum required for cryptographic
-verifiability against the recorded public credential.
+**You** means anyone who exercises rights in a Publication without being one of its
+Authors.
 
-**"Authoritative Contribution"** means a contribution to the Software made by a Licensed
-Contributor using a Signing Key registered in the Contributor Registry at the time the
-contribution is made, such that the signature can be independently verified against the
-public key recorded in the Contributor Registry. Where the Software is managed in a
-Version Control System, an Authoritative Contribution takes the form of a
-cryptographically signed Changeset; where the Software is distributed outside a VCS, it
-takes the form of a released artifact accompanied by a detached cryptographic signature
-or equivalent verifiable credential.
+## 1. Authorship
 
-**"External Contribution"** means any contribution to the Software — whether a VCS
-Changeset, patch, file, or other addition — that is not an Authoritative Contribution,
-i.e., it is made by a person whose Signing Key is not registered in the Contributor
-Registry at the time of contribution.
+1.1 Each Author owns all intellectual property in their Signed Publications, and the
+Authors together own every cumulative Publication. This License transfers no ownership;
+all rights not expressly granted are reserved, in each increment and in every whole.
+Use of any part of a Publication is use of every Signed Publication embodied in that
+part.
 
-**"Ratified Contribution"** means an External Contribution that has been explicitly
-accepted as part of the Software by an Authoritative Contribution in accordance with
-Section 5.
+1.2 The sequence of Signed Publications is the authoritative record of authorship.
+Whoever makes a Publication available must keep that record with it and must include
+this License or a durable reference to it.
 
-**"Contributor Registry"** means the authoritative record of Licensed Contributors and
-their public signing credentials, maintained in a file named `CONTRIBUTORS` in the root
-of the Software. The minimum required content is defined in Appendix B; the file format
-is not mandated by this License.
+1.3 A signature under this License has the effect that applicable law gives a signature
+affirming authorship and accepting binding terms. Loss or compromise of a signing
+credential does not defeat authorship already recorded; authorship may also be proved
+by any other lawful means.
 
-**"Licensed Contributor"** means any natural person or legal entity whose Signing Key is
-recorded in the current Contributor Registry at the time a relevant Changeset is made.
+## 2. Your Rights
 
-**"Founding Contributor"** means the first Licensed Contributor to apply this License
-to the Software, whose identity is established by the Foundational Contribution described
-in Section 3.1.
+By exercising any right granted here, You accept this License. Each Author grants You a
+worldwide, royalty-free, non-exclusive, non-transferable, non-sublicensable license,
+irrevocable except as Section 5 provides, to:
 
-**"Contributor Pool"** means the set of all current Licensed Contributors.
+(a) access, read, and study any Publication, for any purpose;
 
-**"Dormancy Period"** means a continuous period of twenty-four (24) calendar months
-during which no Publication of the Software has been made by any Licensed Contributor
-in any publicly accessible medium.
+(b) use it, unchanged, for any purpose, commercial or not;
 
-**"Fallback License"** means the Apache License, Version 2.0, as published by the Apache
-Software Foundation (https://www.apache.org/licenses/LICENSE-2.0).
+(c) reproduce and share it, unchanged, in whole or in part, provided that this License,
+every signature, and every notice of authorship remain intact with every copy, and that
+You impose no further terms on anyone who receives one;
 
-**"Publication"** means any act by a Licensed Contributor of making the Software, or any
-portion thereof, publicly available in any medium, including but not limited to:
-distribution of a source archive or compiled binary; publication of a versioned package
-on a public registry; or, where the Software is managed in a Version Control System, the
-making accessible of one or more new Changesets in a publicly accessible repository. A
-formal versioned release is not required; any incremental addition to the publicly
-accessible body of the Software constitutes a Publication.
+(d) adapt it privately — to study or test it, or to prepare material to offer under
+Section 3 — provided nothing adapted is published or shared except by offering it to
+the Authors.
 
-**"You"** or **"User"** means any person or entity exercising rights under this License
-who is not a Licensed Contributor.
+A copy produced from a Publication by a purely mechanical step, made only to enable its
+use, counts as the unchanged Publication. Everyone who receives a copy receives these
+rights directly from the Authors.
 
----
+## 3. Authors
 
-## 2. Purpose and Scope
+3.1 Whoever makes a Signed Publication accepts this License by signing it, and grants
+every present and future Author a perpetual, worldwide, royalty-free, irrevocable
+license to use, reproduce, adapt, incorporate, and build upon that Signed Publication,
+and to publish the result under this License.
 
-### 2.1 Primary Purpose
+3.2 Whoever offers material for incorporation into a Publication grants the Authors
+that same license in the offered material and warrants the right to grant it.
 
-The sole purpose of this License is to preserve and document intellectual property
-rights in a form suitable for:
+3.3 The maker of offered material that is itself a Signed Publication becomes an Author
+when a current Author incorporates it, or builds upon it, in a later Signed
+Publication. Offered material without a signature is published, upon incorporation, on
+the authority of the incorporating Author; its offeror acquires no authorship.
 
-- formal registration of intellectual property with governmental bodies;
-- valuation as an intangible asset for accounting and business purposes;
-- contribution as a founder's share or IP asset during formation of a legal entity;
-- demonstration of authorship in investment due diligence or licensing negotiations.
+3.4 An Author may transfer the rights in their Signed Publications, including to a
+legal entity as a contribution in kind; the successor takes them as an Author, bound by
+and benefiting from this License. All Authors together may also publish the Publication
+under different terms; rights already granted are not withdrawn.
 
-This License's restrictions exist solely to serve this purpose. They are not intended to
-impede legitimate study, non-commercial use, or the flow of knowledge.
+## 4. Reservations
 
-### 2.2 Scope
+Except as Sections 2 and 3 expressly allow, You may not:
 
-This License governs the entire Software and all Authoritative Contributions therein from
-the date of the Foundational Contribution (Section 3.1). It applies regardless of the
-medium or platform through which the Software is distributed or managed.
+(a) modify, translate, arrange, transform, or otherwise adapt any Publication, or
+publish or share anything derived from one;
 
----
+(b) remove, alter, obscure, or forge any signature or notice of authorship, or
+misrepresent the origin, authorship, or completeness of any Publication;
 
-## 3. Identification of Rightsholders
+(c) assert ownership of any Publication or grant anyone any rights in it.
 
-### 3.1 Foundational Contribution
+No patent or trademark rights are licensed.
 
-The Founding Contributor establishes this License by making the **Foundational
-Contribution**: an Authoritative Contribution that introduces, at minimum:
+## 5. Termination
 
-(a) A file `LICENSE.md` containing the full text of this License; and
-(b) The initial `CONTRIBUTORS` file recording the Founding Contributor's entry.
+Your rights end automatically upon any breach of this License. For a first breach, they
+are reinstated once if You cure it fully within thirty days of learning of it. The
+Authors, individually or together, may require deletion of unauthorized copies and of
+anything derived from them, and may pursue every remedy the law allows.
 
-Because the Foundational Contribution is itself cryptographically signed by the Founding
-Contributor, the signature is the proof of authorship and the acceptance of this License.
-A separate detached signature file (`LICENSE.md.asc`) is **optional**: it may be
-included for the convenience of recipients who verify the License text outside a VCS
-context, but its presence or absence does not affect the validity of this License.
+## 6. No Warranty; No Liability
 
-The Founding Contributor's Signing Key must be capable of verification at the time of
-the Foundational Contribution and for a reasonable period thereafter.
+Every Publication is provided "as is", without warranty of any kind. To the fullest
+extent the law allows, no Author is liable to anyone for any damages of any kind
+arising from a Publication or from this License.
 
-### 3.2 VCS-Based Attribution
+## 7. This Text
 
-When the Software is managed in a VCS, a Licensed Contributor's authorship of any
-content is established by the existence of one or more Authoritative Contributions
-introducing or modifying that content. The Authoritative Contribution signature is the
-cryptographic proof of authorship and the operative license declaration for that content.
-
-**Per-file license headers are required** in all source files, but in VCS Mode the
-header serves as a human-readable notice only — it does not need to embed the
-contributor's public key or signing credential, because that information is recorded
-in the `CONTRIBUTORS` file within the VCS history. The required header format is
-defined in Appendix A.
-
-### 3.3 Snapshot / Out-of-VCS Distribution Mode
-
-When the Software is distributed outside a VCS — for example, as a source archive,
-a tarball, a file copy, or any form in which the full commit history and signatures
-are not preserved — each distributed source file **must** include a file header
-containing, in addition to the standard notice:
-
-(a) the public signing credential (e.g., GPG public key, SSH public key, or certificate)
-    of the Licensed Contributor responsible for that file's content; or
-(b) a reference sufficient to locate and verify that credential independently (e.g., a
-    key fingerprint and a durable URL or key server reference).
-
-This ensures that recipients without VCS access can independently verify the authorship
-chain. The full header format for Snapshot Mode is defined in Appendix A.
-
-### 3.4 Signing Key Integrity and Compromise
-
-The use of a cryptographic Signing Key does not limit a Licensed Contributor's ability
-to assert exclusive rights by other legally accepted means. In the event of key loss,
-revocation, or compromise:
-
-(a) The Licensed Contributor should make a new Authoritative Contribution with a new
-    Signing Key updating their entry in `CONTRIBUTORS`, signed (if possible) with the
-    old key or countersigned by another Licensed Contributor;
-(b) Authorship of prior Authoritative Contributions remains valid and provable by the
-    immutable record of those contributions and the cryptographic evidence they carry;
-(c) A statutory declaration or other legally sufficient evidence of identity may be
-    used to supplement cryptographic evidence in legal proceedings.
-
----
-
-## 4. The Contributor Pool
-
-### 4.1 Formation
-
-The Founding Contributor constitutes the initial Contributor Pool. The `CONTRIBUTORS`
-file is the sole authoritative source for Pool membership and must contain, for each
-Licensed Contributor, the information specified in Appendix B.
-
-### 4.2 Admission of New Contributors
-
-A person or entity is admitted to the Contributor Pool only when **both** of the
-following conditions are satisfied:
-
-(a) **Nomination**: An existing Licensed Contributor makes an Authoritative Contribution
-    that adds the nominee's entry (including their Signing Key) to `CONTRIBUTORS`; and
-
-(b) **Acceptance**: The nominee, using their own Signing Key (which must now match the
-    key recorded under their entry), makes a subsequent Authoritative Contribution
-    containing an explicit written acceptance of the terms of this License.
-
-An entry in `CONTRIBUTORS` without a corresponding acceptance Authoritative Contribution
-from the nominee does not constitute admission. A nominee's acceptance Authoritative
-Contribution simultaneously constitutes their grant under Section 4.4.
-
-### 4.3 Platform-Independent Registry
-
-The `CONTRIBUTORS` file is the sole mechanism for defining the Contributor Pool.
-Platform-level access controls (e.g., GitHub repository teams, GitLab project members)
-do **not** automatically grant or imply Licensed Contributor status. Such lists may
-serve as corroborating evidence of identity and intent but have no independent legal
-effect under this License.
-
-This design ensures that IPRL is platform-independent: Pool membership is determined
-solely by the Contributor Registry, not by access controls on any hosting service.
-
-### 4.4 Intra-Pool Mutual Rights Grant
-
-Each Licensed Contributor, by being admitted to the Pool, irrevocably grants to every
-other current and future Licensed Contributor a **perpetual, worldwide, royalty-free**
-license to:
-
-(a) use, copy, modify, adapt, and create derivative works of the entire Software,
-    including all contributions made by the granting Contributor;
-(b) compile, execute, deploy, and operate the Software for any commercial or
-    non-commercial purpose;
-(c) sublicense the Software to third parties solely under the terms of this License
-    or a duly adopted successor version thereof.
-
-This intra-pool grant is the mechanism by which collaborative development occurs without
-fragmenting IP ownership. Each Licensed Contributor retains full copyright ownership of
-their Authoritative Contributions; the grant is a license, not a transfer. The mutual,
-exclusive-as-to-the-world nature of the grant preserves the IP value of the Software:
-no person outside the Pool acquires modification or commercial-use rights, while every
-Pool member has full operational rights.
-
-### 4.5 Withdrawal of a Licensed Contributor
-
-A Licensed Contributor may withdraw from the Pool by making an Authoritative Contribution
-explicitly declaring their withdrawal and updating `CONTRIBUTORS`. Withdrawal:
-
-(a) does not retroactively revoke rights in Authoritative Contributions made prior to withdrawal;
-(b) does not affect the intra-pool grants already given, which remain irrevocable;
-(c) terminates that Contributor's right to make future Authoritative Contributions binding
-    on the Pool.
-
-### 4.6 Removal by the Pool
-
-A Licensed Contributor who has made no Authoritative Contribution for twelve (12) or more
-consecutive calendar months may be removed from the Pool by an Authoritative Contribution
-of any remaining Licensed Contributor, which must state the grounds and the period of
-inactivity. Removal is effective upon a subsequent Authoritative Contribution by any
-other Licensed Contributor confirming the removal (two-step consensus). Removal does not
-retroactively affect the removed Contributor's ownership of prior Authoritative
-Contributions.
-
----
-
-## 5. External Contributions
-
-### 5.1 Effect on Authorship
-
-An External Contribution does not grant any intellectual property rights to its author
-under this License. The author of an External Contribution:
-
-(a) does not become a Licensed Contributor;
-(b) does not acquire any rights to the Software beyond those granted to Users under
-    Section 6; and
-(c) has no effect on the IP ownership claims of any Licensed Contributor.
-
-### 5.2 Ratification
-
-An External Contribution is Ratified — and thereby incorporated into the canonical
-Software history without constituting a license breach — when a Licensed Contributor
-makes an Authoritative Contribution that:
-
-(a) **Directly incorporates**: the Authoritative Contribution directly incorporates or
-    succeeds the External Contribution within the canonical Software history,
-    establishing an unambiguous record of acceptance; or
-
-(b) **Contains an explicit reference**: the Authoritative Contribution explicitly
-    identifies the External Contribution by sufficient designation (e.g., a cryptographic
-    identifier, patch reference, or other unambiguous description) and includes a
-    statement of acceptance (e.g., "Ratified: <identifier>").
-
-A Ratifying Licensed Contributor assumes responsibility for the content of the Ratified
-Contribution as part of the canonical Software history. The External Contribution author
-acquires no additional rights through Ratification.
-
-### 5.3 Rationale
-
-The Ratification mechanism allows external contributions (e.g., bug reports with patches,
-community pull requests) to be accepted without requiring contributors to formally join
-the Pool, while ensuring that a Licensed Contributor vouches for each such contribution
-and the authorship record of the Software remains unambiguous.
-
----
-
-## 6. Rights Granted to Users
-
-Subject to all conditions and restrictions of this License, the Licensed Contributors
-collectively grant to You a worldwide, royalty-free, non-exclusive, non-transferable,
-non-sublicensable, irrevocable (except as provided in Section 9) license to:
-
-(a) **Read and Study**: access, read, copy, and analyze the source code for any purpose,
-    commercial or non-commercial;
-
-(b) **Compile and Execute**: compile the Software from source and execute or run the
-    resulting binary or interpreted program for any purpose, commercial or non-commercial;
-
-(c) **Redistribute Unmodified**: distribute verbatim, unmodified copies of the Software
-    in source or compiled form for any purpose, commercial or non-commercial, provided
-    that all of the following conditions are met:
-
-    (i)   where distributed via a Version Control System: the complete record of
-          Authoritative Contributions, including all cryptographic signatures, is preserved
-          intact and independently verifiable; where distributed outside a VCS (e.g., as
-          a source archive or binary), the requirements of Section 3.3 are satisfied;
-    (ii)  all per-file license headers are preserved intact and unmodified;
-    (iii) `LICENSE.md` and `CONTRIBUTORS` are included and unmodified, and
-          `LICENSE.md.asc` is included unmodified if present;
-    (iv)  the recipient is notified that the Software is governed by this License; and
-    (v)   no additional restrictions are imposed on recipients beyond those stated here.
-
-**This License does not grant any right to modify, adapt, translate, or create derivative
-works of the Software.**
-
----
-
-## 7. Restrictions
-
-You are expressly prohibited from:
-
-(a) **Modification**: modifying, adapting, translating, reverse-engineering for the purpose
-    of creating competitive derivative works, or creating derivative works of the Software
-    in any form;
-
-(b) **Transfer of Rights**: sublicensing, selling, renting, leasing, or otherwise
-    transferring Your rights in the Software to any third party;
-
-(c) **Tampering with Attribution**: removing, obscuring, forging, or altering any license
-    headers, Signing Key data, cryptographic signatures on Authoritative Contributions,
-    `CONTRIBUTORS`, `LICENSE.md`, or `LICENSE.md.asc` (if present);
-
-(d) **False Ownership Claims**: using the Software in any manner that could be construed
-    as asserting ownership over it by a party who is not a Licensed Contributor.
-
----
-
-## 8. Exclusive Rights and Capital Contribution
-
-### 8.1 Ownership Preserved
-
-All copyright and intellectual property rights in each Licensed Contributor's
-Authoritative Contributions remain exclusively with that Licensed Contributor. This License does not
-transfer ownership or any exclusive right to any person or entity other than through
-the intra-pool mutual grant of Section 4.4.
-
-### 8.2 IP Asset Use
-
-Licensed Contributors may use the Software as:
-
-- an object of intellectual property for official registration with patent, copyright,
-  or trade secret authorities;
-- an intangible asset for financial reporting and business valuation;
-- a founder's contribution in kind upon formation of a legal entity;
-- collateral or subject matter in licensing negotiations or investment due diligence.
-
-### 8.3 Contribution to a Legal Entity
-
-When a Licensed Contributor contributes the Software, or their rights therein, to a
-legal entity (e.g., as a founder's IP contribution upon company formation):
-
-(a) The contribution does not automatically modify the rights of other Licensed
-    Contributors, whose intra-pool grants under Section 4.4 remain in force;
-(b) The receiving legal entity steps into the shoes of that Licensed Contributor for
-    purposes of the intra-pool mutual grant, becoming bound by this License as a
-    Licensed Contributor;
-(c) The contributing Licensed Contributor must make an Authoritative Contribution
-    updating `CONTRIBUTORS` to record the legal entity as successor-in-interest
-    to their entry, including the legal entity's authorized Signing Key(s).
-
----
-
-## 9. Termination
-
-### 9.1 Automatic Termination
-
-Any breach of this License by You terminates your rights under Section 6 automatically
-and without notice. The right to read source code (Section 6(a)) survives termination
-for the sole purpose of allowing You to identify and remediate the breach.
-
-### 9.2 Cure Period
-
-Where a breach is capable of cure, You have thirty (30) calendar days from the date You
-first have actual or constructive knowledge of the breach to cure it fully. Upon complete
-cure, Your rights under Section 6 are reinstated automatically, once only. A second
-breach of the same provision terminates rights permanently without a further cure period.
-
-### 9.3 Remedies
-
-Licensed Contributors may, individually or collectively:
-
-(a) demand immediate cessation of infringing use and verifiable deletion or destruction
-    of all unauthorized copies and derivatives;
-(b) seek injunctive or other equitable relief without the requirement of posting bond;
-(c) seek actual or statutory damages, including lost profits, as available under
-    applicable copyright law;
-(d) publish notice of violations where legally permissible.
-
----
-
-## 10. Dormancy and Fallback License
-
-### 10.1 Dormancy
-
-The Software is **Dormant** when either of the following conditions is satisfied:
-
-(a) **Apparent Dormancy**: no Publication of the Software has been made by any Licensed
-    Contributor for a continuous period of twenty-four (24) calendar months, measured
-    from the date of the last known Publication. Apparent Dormancy is a rebuttable
-    presumption.
-
-(b) **Voluntary Dormancy**: all Licensed Contributors listed in the then-current
-    `CONTRIBUTORS` have each published a signed public statement explicitly declaring
-    the Software Dormant and consenting to re-licensing under the Fallback License.
-    Voluntary Dormancy is effective upon the last such declaration and is irrevocable.
-
-### 10.2 Dormancy Claim and Diligent Search
-
-Any person (a "Claimant") who wishes to invoke the Fallback License on grounds of
-Apparent Dormancy must first publish a timestamped public notice (a "Dormancy Claim")
-identifying the Software and stating the grounds. Before publishing, the Claimant must
-conduct a **diligent search** in good faith — as that standard is generally understood
-in copyright law and applied by courts of competent jurisdiction — to determine whether
-any Licensed Contributor has made a recent Publication or is continuing active
-development. The search must encompass reasonably accessible public registries, software
-repositories, and the contact addresses for contributors recorded in `CONTRIBUTORS`.
-
-The Claimant must wait **sixty (60) calendar days** after publishing the Dormancy Claim
-before exercising any right under the Fallback License (the "Response Period").
-
-Any Licensed Contributor may rebut Apparent Dormancy during the Response Period by
-publishing a signed public statement that: (i) identifies a publicly accessible location
-at which a new Publication of the Software is available or will be made within sixty
-(60) days, or credibly states intent to resume development; and (ii) explicitly
-references the Dormancy Claim. A valid rebuttal invalidates the Dormancy Claim and
-resets the twenty-four-month period from the date of rebuttal.
-
-If no valid rebuttal is received within the Response Period, Dormancy is Confirmed. A
-Claimant who completes this procedure in good faith is granted a safe harbor against
-infringement claims by Licensed Contributors arising from good-faith reliance on
-Confirmed Dormancy.
-
-### 10.3 Fallback License
-
-Upon Confirmed or Voluntary Dormancy, the Software is irrevocably made available, in
-addition to the rights already granted under this License, under the **Apache License,
-Version 2.0** (https://www.apache.org/licenses/LICENSE-2.0). Licensed Contributors
-retain copyright ownership of their respective contributions; the Fallback License is a
-license, not a transfer of ownership. Confirmed Dormancy is irrevocable: subsequent
-resumption of development does not withdraw the Fallback License from any person who
-relied on it in good faith. The Apache License attribution requirements apply;
-downstream recipients must preserve copyright notices and `CONTRIBUTORS`.
-
----
-
-## 11. Jurisdiction and Electronic Signatures
-
-This License applies globally under international copyright treaties including the
-Berne Convention, the TRIPS Agreement, and the WIPO Copyright Treaty.
-
-The cryptographic signatures described in this License constitute valid and binding
-electronic signatures under:
-
-- Regulation (EU) No 910/2014 (eIDAS) — as advanced electronic signatures;
-- the U.S. Electronic Signatures in Global and National Commerce Act (E-SIGN);
-- the UNCITRAL Model Law on Electronic Signatures;
-- and equivalent national legislation in other jurisdictions.
-
-A cryptographic signature on a Changeset, or on the optional `LICENSE.md.asc` detached
-signature file, is legally equivalent to a handwritten signature on a document asserting
-authorship and acceptance of these terms.
-
-National appendices may be issued by Licensed Contributors for local compliance without
-affecting the global applicability of this License.
-
----
-
-## 12. Disclaimer of Warranties and Limitation of Liability
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
-PURPOSE, TITLE, AND NON-INFRINGEMENT.
-
-IN NO EVENT SHALL ANY LICENSED CONTRIBUTOR BE LIABLE FOR ANY CLAIM, DIRECT, INDIRECT,
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
-LOSS OF DATA, LOSS OF PROFITS, OR BUSINESS INTERRUPTION), HOWEVER CAUSED AND ON ANY
-THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT, ARISING FROM OR
-IN CONNECTION WITH THE SOFTWARE OR THIS LICENSE, EVEN IF ADVISED OF THE POSSIBILITY
-OF SUCH DAMAGES.
-
----
-
-## 13. License of This Document
-
-The text of this License (`LICENSE.md`), the `CONTRIBUTORS` format guidance
-(Appendix B), and all accompanying templates and documentation are released under the
-**Creative Commons Zero v1.0 Universal (CC0)** license. You are free to copy, modify,
-distribute, and use them without restriction, for any purpose, without asking permission.
-
----
-
-## Appendix A: File Header Format
-
-Every source file distributed under this License must carry a license header using
-language-appropriate comment syntax. Two forms are defined:
-
-### A.1 VCS Mode Header (minimum required in repositories with full commit history)
-
-The VCS Mode header is a human-readable notice. The cryptographic proof of authorship
-is in the Authoritative Contribution signature; the header does not need to embed key
-material.
-
-```
-// [Optional copyright notice, e.g.: Copyright (C) 2024 Alice Smith]
-// Distributed under the Intellectual Property Reserve License (IPRL) v2.0
-// Licensed Contributors: see CONTRIBUTORS
-```
-
-### A.2 Snapshot Mode Header (required when distributed outside VCS context)
-
-When files are distributed without full VCS history — e.g., as a source archive, a
-tarball, or an individual file copy — the header must additionally include the public
-signing credential of the contributing author, or a durable reference to it, so that
-recipients can verify authorship without VCS access.
-
-```
-// [Optional copyright notice, e.g.: Copyright (C) 2024 Alice Smith]
-// Distributed under the Intellectual Property Reserve License (IPRL) v2.0
-// Licensed Contributors: see CONTRIBUTORS
-//
-// Author signing credential (for verification outside VCS):
-// [include any of the following sufficient for independent verification:]
-//   Key fingerprint: ABCD 1234 5678 9ABC DEF0  1234 5678 9ABC DEAD BEEF
-//   SSH public key:  ssh-ed25519 AAAA...
-//   Full public key block: -----BEGIN PGP PUBLIC KEY BLOCK----- ...
-//   Key reference:   https://keyserver.example.com/pks/lookup?...
-```
-
-Any credential type that can be used to verify a Signing Key recorded in `CONTRIBUTORS`
-is acceptable. The format is not mandated beyond the requirement of being sufficient for
-independent verification.
-
----
-
-## Appendix B: CONTRIBUTORS File
-
-The `CONTRIBUTORS` file is the Contributor Registry defined in Section 1. It must be
-maintained through Authoritative Contributions — any modification must be made via an
-Authoritative Contribution by a Licensed Contributor. The file is authenticated by the
-signature of the Authoritative Contribution that introduces or modifies it; no separate
-signature file is required.
-
-**Structure:** The file opens with the standard IPRL license header (same form as
-Appendix A.1), followed by one entry per Licensed Contributor.
-
-**Each entry consists of:**
-1. Zero or more lines of optional, free-form identification information — any
-   human-readable text the contributor chooses, such as a real name, pseudonym,
-   email address, or any other data (including opaque identifiers like hashes)
-   that the contributor may later use to prove their real-world identity;
-2. The contributor's public signing credential in its native format.
-
-**The public signing credential is the only mandatory element per entry.** All
-identification text is voluntary. The file imposes no schema, field names, or
-ordering beyond this.
-
-Inline comment markers (`#`) may be used to distinguish identification text from key
-material, but any plain-text layout that makes the association between identification
-and key unambiguous is acceptable. Public keys for single-line schemes (e.g., SSH) may
-appear one per line. Block-format keys (e.g., OpenPGP) span multiple lines in their
-native armored format.
-
-Example:
-
-```
-# Distributed under the Intellectual Property Reserve License (IPRL) v2.0
-# Licensed Contributors:
-
-# Alice Smith <alice@example.com>
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI...
-
-# Bob Jones  bob@work.example.com
------BEGIN PGP PUBLIC KEY BLOCK-----
-[key data]
------END PGP PUBLIC KEY BLOCK-----
-
-# pseudonym: ghost  sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-ssh-ed25519 AAAAC3Nza...
-
-# (key only, no identification — the contributor's identity is their key)
-ssh-ed25519 AAAAC3Nzb...
-```
-
----
-
-## Appendix C: Relationship to the Open Source Definition
-
-The Open Source Initiative (OSI) Open Source Definition (OSD) requires, among other
-criteria, that a license permit modification and the creation of derivative works
-(OSD criterion 3).
-
-**This License intentionally does not comply with OSD criterion 3** (modification and
-derivative works), for the following reason:
-
-- The prohibition on modification (Section 7(a)) is essential to preserve the
-  Software's status as a defined, attributable IP asset. If modification rights were
-  granted universally, the Software could not be maintained as a bounded, identifiable
-  object of IP for registration, valuation, and founder-contribution purposes.
-
-This single-criterion non-compliance is structurally analogous to the Creative Commons
-Attribution-NoDerivatives (CC BY-ND) family of licenses applied to software — freely
-usable and commercially deployable without restriction, but not modifiable by those
-outside the Contributor Pool. Upon Dormancy (Section 10), the Software automatically
-becomes governed by the Apache License, Version 2.0, which is fully OSI-certified.
-IPRL is therefore best characterized as a **no-derivatives source-available license
-with a built-in open source transition**.
-
-If OSI compliance from day one is required for a particular use case, the parties should
-negotiate a separate license with the Licensed Contributors or await Dormancy.
+The text of this License is released under Creative Commons Zero 1.0 Universal: anyone
+may copy, change, and use it without restriction.
 
 ---
 

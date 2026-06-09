@@ -4,58 +4,89 @@
 
 ## Purpose
 
-A work published under this License grows by increments, and every increment is
-published signed. The public record of signed increments is itself the proof of who
-created each part of the work and who together created the whole. The Authors keep all
-intellectual property in the work — each in their own increments, all of them in the
-sum — so that the work remains a defined, attributable, verifiable asset: fit for
-registration, valuation, separate licensing, or contribution as capital to a legal
-entity, while staying open for anyone to read, run, and share unchanged. This is a
-source-available license, not an Open Source license: the right to change the work is
-the right the Authors keep.
+A work published under this License is protected by its Author's signature: the
+signature is what places a Publication under these terms and proves who made it. A work
+may grow into a series of Publications by one or more Authors, and the License then
+protects each Signed Publication and the cumulative work the series forms. The Authors
+keep all intellectual property in the work, so that it remains a defined, attributable,
+verifiable asset — fit for registration, valuation, separate licensing, or contribution
+as capital to a legal entity — while staying open for anyone to read, run, and share
+unchanged. This is a source-available license, not an Open Source license: the right to
+change the work is the right the Authors keep.
 
 ## Terms
 
-**Publication** means a work of authorship made publicly available under this License:
-a first work, every later increment that adds to or revises what was published before,
-and the cumulative work that the increments up to any point together form. This License
-applies to a Publication at every level — to each increment by itself and to every
-whole composed of increments.
+**Publication** means a work of authorship made publicly available.
 
-**Signed Publication** means a Publication bearing the signature of its maker: a record
-affixed to or logically associated with the Publication that identifies the maker,
-expresses the maker's intent to assert authorship and to publish under this License,
-and can be verified by anyone against a credential the maker has made public.
+**Signed Publication** means a Publication bearing the signature of its Author: a
+record affixed to or logically associated with the Publication that identifies the
+Author, expresses the Author's intent to assert authorship and to apply this License,
+and can be verified by anyone against a credential the Author has made public.
 
 **Author** (also **Contributor**) means the maker of the first Signed Publication of a
-work, and every person or entity whose own Signed Publication an Author has afterwards
-incorporated into, or built upon in, a later Signed Publication.
+work, and every person or entity later admitted to its authorship under Section 3.
 
 **You** means anyone who exercises rights in a Publication without being one of its
 Authors.
 
-## 1. Authorship
+## 1. The Publication
 
-1.1 Each Author owns all intellectual property in their Signed Publications, and the
-Authors together own every cumulative Publication. This License transfers no ownership;
-all rights not expressly granted are reserved, in each increment and in every whole.
-Use of any part of a Publication is use of every Signed Publication embodied in that
-part.
+1.1 A Publication comes under this License by being signed: with the first Signed
+Publication of a work, its Author places the work under these terms and reserves every
+right in it not expressly granted here. What is not signed, this License does not
+protect.
 
-1.2 The sequence of Signed Publications is the authoritative record of authorship.
-Whoever makes a Publication available must keep that record with it and must include
-this License or a durable reference to it.
-
-1.3 A signature under this License has the effect that applicable law gives a signature
+1.2 A signature under this License has the effect that applicable law gives a signature
 affirming authorship and accepting binding terms. Loss or compromise of a signing
 credential does not defeat authorship already recorded; authorship may also be proved
 by any other lawful means.
 
-## 2. Your Rights
+1.3 Whoever makes a Publication available must keep its signatures with it and must
+include this License or a durable reference to it.
+
+## 2. A Series of Publications
+
+2.1 A work may grow into a series of Publications: each later Publication adds to or
+revises what was published before, and the series up to any point forms one cumulative
+Publication. This License applies to every Signed Publication by itself and to every
+cumulative Publication formed from them.
+
+2.2 Each Author owns all intellectual property in their Signed Publications, and the
+Authors together own the cumulative Publication. Use of any part of a cumulative
+Publication is use of every Signed Publication embodied in that part.
+
+## 3. Additions to the Work
+
+3.1 Material added to the work without a signature is not protected by this License. By
+publishing it unsigned, its maker implicitly permits its use as part of the work on the
+terms already established for the work, acquires no authorship, and obliges no one to
+protect any rights in that material. A later Signed Publication that builds upon
+unsigned material confirms it as part of the cumulative Publication on the signing
+Author's authority.
+
+3.2 A Signed Publication made by someone who is not yet an Author does not, by itself,
+join the cumulative Publication. It joins only when an existing Author explicitly
+accepts it in a Signed Publication of the Author's own — one that identifies the
+accepted Signed Publication and expresses its acceptance. Upon that acceptance, its
+maker becomes an Author.
+
+3.3 Whoever makes a Signed Publication accepts this License by signing it, and grants
+every present and future Author of the work a perpetual, worldwide, royalty-free,
+irrevocable license to use, reproduce, adapt, incorporate, and build upon that Signed
+Publication, and to publish the result under this License. Whoever offers material for
+addition to the work grants the Authors that same license in the offered material and
+warrants the right to grant it.
+
+3.4 An Author may transfer the rights in their Signed Publications, including to a
+legal entity as a contribution in kind; the successor takes them as an Author, bound by
+and benefiting from this License. All Authors together may also publish the work under
+different terms; rights already granted are not withdrawn.
+
+## 4. Your Rights
 
 By exercising any right granted here, You accept this License. Each Author grants You a
 worldwide, royalty-free, non-exclusive, non-transferable, non-sublicensable license,
-irrevocable except as Section 5 provides, to:
+irrevocable except as Section 6 provides, to:
 
 (a) access, read, and study any Publication, for any purpose;
 
@@ -73,29 +104,9 @@ A copy produced from a Publication by a purely mechanical step, made only to ena
 use, counts as the unchanged Publication. Everyone who receives a copy receives these
 rights directly from the Authors.
 
-## 3. Authors
+## 5. Reservations
 
-3.1 Whoever makes a Signed Publication accepts this License by signing it, and grants
-every present and future Author a perpetual, worldwide, royalty-free, irrevocable
-license to use, reproduce, adapt, incorporate, and build upon that Signed Publication,
-and to publish the result under this License.
-
-3.2 Whoever offers material for incorporation into a Publication grants the Authors
-that same license in the offered material and warrants the right to grant it.
-
-3.3 The maker of offered material that is itself a Signed Publication becomes an Author
-when a current Author incorporates it, or builds upon it, in a later Signed
-Publication. Offered material without a signature is published, upon incorporation, on
-the authority of the incorporating Author; its offeror acquires no authorship.
-
-3.4 An Author may transfer the rights in their Signed Publications, including to a
-legal entity as a contribution in kind; the successor takes them as an Author, bound by
-and benefiting from this License. All Authors together may also publish the Publication
-under different terms; rights already granted are not withdrawn.
-
-## 4. Reservations
-
-Except as Sections 2 and 3 expressly allow, You may not:
+Except as Sections 3 and 4 expressly allow, You may not:
 
 (a) modify, translate, arrange, transform, or otherwise adapt any Publication, or
 publish or share anything derived from one;
@@ -107,20 +118,20 @@ misrepresent the origin, authorship, or completeness of any Publication;
 
 No patent or trademark rights are licensed.
 
-## 5. Termination
+## 6. Termination
 
 Your rights end automatically upon any breach of this License. For a first breach, they
 are reinstated once if You cure it fully within thirty days of learning of it. The
 Authors, individually or together, may require deletion of unauthorized copies and of
 anything derived from them, and may pursue every remedy the law allows.
 
-## 6. No Warranty; No Liability
+## 7. No Warranty; No Liability
 
 Every Publication is provided "as is", without warranty of any kind. To the fullest
 extent the law allows, no Author is liable to anyone for any damages of any kind
 arising from a Publication or from this License.
 
-## 7. This Text
+## 8. This Text
 
 The text of this License is released under Creative Commons Zero 1.0 Universal: anyone
 may copy, change, and use it without restriction.

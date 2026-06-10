@@ -5,7 +5,7 @@
 ## Intent
 
 This License keeps open publication open: anyone may read, study, run, and share the
-work; contributions are welcome; the record of who made what is public and verifiable.
+work; the record of who made what is public and verifiable.
 It reserves to the work's Rightsholders the right to change the work and to publish the
 change, so that the work published openly remains a defined, attributable, and
 verifiable asset. The work is therefore source-available rather than Open Source, until
@@ -45,7 +45,7 @@ by any other lawful means.
 1.3 Whoever makes a Publication available must keep its signatures with it and must
 include this License or a durable reference to it.
 
-## 2. A Series of Publications
+## 2. The Cumulative Work
 
 2.1 A work may grow into a series of Publications: each later Publication adds to or
 revises what was published before. The whole set of Publications up to any point,

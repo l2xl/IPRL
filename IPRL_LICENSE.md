@@ -45,14 +45,14 @@ include this License or a durable reference to it.
 
 2.1 A work may grow into a series of Publications: each later Publication adds to or
 revises what was published before. The whole set of Publications up to any point,
-signed and unsigned alike, is named the **Cumulative Work** — a name for clarity, not a
+signed and unsigned alike, is named the **Cumulative Work**. The Cumulative Work is not a
 separate object of licensing: what this License protects are the Signed Publications
 within it.
 
 2.2 Each Author owns all intellectual property in their Signed Publications. Use of any
 part of the Cumulative Work is use of every Signed Publication embodied in that part.
 
-## 3. Additions to the Work
+## 3. Additions to the Cumulative Work
 
 3.1 An addition published without a signature becomes part of the Cumulative Work as it
 was published: whoever publishes it lets it stand there on the work's terms. Such an

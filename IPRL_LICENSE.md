@@ -44,25 +44,25 @@ include this License or a durable reference to it.
 ## 2. A Series of Publications
 
 2.1 A work may grow into a series of Publications: each later Publication adds to or
-revises what was published before, and the series up to any point forms one cumulative
-Publication. This License applies to every Signed Publication by itself and to every
-cumulative Publication formed from them.
+revises what was published before. The whole set of Publications up to any point,
+signed and unsigned alike, is named the **Cumulative Work** — a name for clarity, not a
+separate object of licensing: what this License protects are the Signed Publications
+within it.
 
-2.2 Each Author owns all intellectual property in their Signed Publications, and the
-Authors together own the cumulative Publication. Use of any part of a cumulative
-Publication is use of every Signed Publication embodied in that part.
+2.2 Each Author owns all intellectual property in their Signed Publications. Use of any
+part of the Cumulative Work is use of every Signed Publication embodied in that part.
 
 ## 3. Additions to the Work
 
-3.1 An addition published without a signature becomes part of the cumulative
-Publication as it was published: whoever publishes it lets it stand there on the work's
-terms. Such an addition is not protected by this License and implies no demands of the
-Authors — they take no rights in it beyond its place in the work. Its maker remains the
-author of what they made, with whatever rights the law attaches to that; an Author of
-the work, however, they become only as Section 3.2 provides.
+3.1 An addition published without a signature becomes part of the Cumulative Work as it
+was published: whoever publishes it lets it stand there on the work's terms. Such an
+addition is not protected by this License and implies no demands of the Authors — they
+take no rights in it beyond its place in the work. Its maker remains the author of what
+they made, with whatever rights the law attaches to that; an Author of the work,
+however, they become only as Section 3.2 provides.
 
 3.2 A Signed Publication made by someone who is not yet an Author does not, by itself,
-join the cumulative Publication. It joins only when an existing Author explicitly
+join the Cumulative Work. It joins only when an existing Author explicitly
 accepts it in a Signed Publication of the Author's own — one that identifies the
 accepted Signed Publication and expresses its acceptance. Upon that acceptance, its
 maker becomes an Author.

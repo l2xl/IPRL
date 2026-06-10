@@ -33,11 +33,12 @@ steps:
    not signed, the license does not protect.
 
 2. **From one Publication to a series.** A work may grow: later Publications add to or
-   revise earlier ones, and the series up to any point forms one cumulative
-   Publication. The license applies at both levels — to each Signed Publication by
-   itself and to the cumulative whole. Each Author owns their own Signed Publications;
-   all Authors together own the cumulative work; using any part of the work is using
-   every Signed Publication embodied in it. The chain of signatures travelling with the
+   revise earlier ones. The whole set of Publications up to any point — signed, and
+   some perhaps unsigned — is called the *Cumulative Work*. The name exists for
+   clarity, not as a separate object of licensing: the license attaches to the Signed
+   Publications, and protection of the whole follows from them, because using any part
+   of the Cumulative Work is using every Signed Publication embodied in it. Each Author
+   owns their own Signed Publications, and the chain of signatures travelling with the
    work is the entire ownership record — no separate registry is needed.
 
 3. **Unsigned additions join the work and carry no claim.** An addition published
@@ -49,7 +50,7 @@ steps:
    rights in it beyond its place in the work: no demands arise in either direction.
 
 4. **New authors join only by explicit signed acceptance.** A Signed Publication made
-   by someone who is not yet an Author does not join the cumulative work by itself. An
+   by someone who is not yet an Author does not join the Cumulative Work by itself. An
    existing Author must explicitly accept it in a Signed Publication of their own — one
    that identifies the accepted contribution and states its acceptance. Only then does
    its maker become an Author. New ownership claims on the work can therefore never
@@ -63,7 +64,7 @@ to prepare an offer back to the Authors.
 A picture of the model, with Publications `P1…P4` by Authors `A` and `B`:
 
 ```
-A: P1 ── P2 ──────────── P4 ─▶  cumulative Publication = P1+P2+P3+P4
+A: P1 ── P2 ──────────── P4 ─▶  Cumulative Work = P1+P2+P3+P4
                  ╲       ╱      Authors = {A, B}
 B:                P3 ───╯       (B's Signed Publication, explicitly accepted
                                  by A's signature in P4)

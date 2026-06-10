@@ -4,23 +4,12 @@
 
 ## Intent
 
-This License faces two ways, and means to serve both.
-
-Toward the community, it keeps the habits of Open Source: the work is published for
-everyone to read, study, run, and share; contributions are welcome; the record of who
-made what is open and verifiable. It is written to live inside that practice, and the
-Authors may at any time, acting together, carry the work over into an Open Source
-license proper.
-
-Toward its Authors, it is an instrument of formation: by reserving the right to change
-the work and to publish the change, it keeps openly published work a defined,
-attributable, verifiable asset — fit for registration, valuation, separate licensing,
-or contribution as capital to a legal entity. Until the Authors decide otherwise, the
-work is source-available rather than Open Source.
-
-This License exists to make open publication and venture funding lawful together. It is
-not an instrument of prosecution: what it does not grant is simply reserved, and the
-Authors' protection lies in that reservation, not in penalties.
+This License keeps open publication open: anyone may read, study, run, and share the
+work; contributions are welcome; the record of who made what is public and verifiable.
+It reserves to the Authors the right to change the work and to publish the change, so
+that the work they publish openly remains their defined, attributable, and verifiable
+asset. The work is therefore source-available rather than Open Source, until its
+Authors, acting together, decide otherwise.
 
 ## Terms
 
@@ -126,21 +115,13 @@ misrepresent the origin, authorship, or completeness of any Publication;
 
 No patent or trademark rights are licensed.
 
-## 6. Outside These Terms
-
-This License is meant to enable, not to punish. Whatever the granted rights cover needs
-no further permission; whatever they do not cover is simply not licensed and remains,
-like any unlicensed use, a matter for the general law of authorship. No forfeiture
-follows from a misstep: the grants of this License stay open to anyone who observes its
-terms.
-
-## 7. No Warranty; No Liability
+## 6. No Warranty; No Liability
 
 Every Publication is provided "as is", without warranty of any kind. To the fullest
 extent the law allows, no Author is liable to anyone for any damages of any kind
 arising from a Publication or from this License.
 
-## 8. This Text
+## 7. This Text
 
 The text of this License is released under Creative Commons Zero 1.0 Universal: anyone
 may copy, change, and use it without restriction.

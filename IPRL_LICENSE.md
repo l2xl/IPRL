@@ -56,9 +56,10 @@ Publication is use of every Signed Publication embodied in that part.
 
 3.1 An addition published without a signature becomes part of the cumulative
 Publication as it was published: whoever publishes it lets it stand there on the work's
-terms. Such an addition is not protected by this License, brings its maker no
-authorship, and implies no demands of the Authors — they take no rights in it beyond
-its place in the work.
+terms. Such an addition is not protected by this License and implies no demands of the
+Authors — they take no rights in it beyond its place in the work. Its maker remains the
+author of what they made, with whatever rights the law attaches to that; an Author of
+the work, however, they become only as Section 3.2 provides.
 
 3.2 A Signed Publication made by someone who is not yet an Author does not, by itself,
 join the cumulative Publication. It joins only when an existing Author explicitly

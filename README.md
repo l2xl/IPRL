@@ -42,9 +42,11 @@ steps:
 
 3. **Unsigned additions join the work and carry no claim.** An addition published
    without a signature simply becomes part of the work as it was published — whoever
-   publishes it lets it stand there on the work's terms. It gains no authorship and no
-   protection of the license, and the Authors take no rights in it beyond its place in
-   the work: no demands arise in either direction.
+   publishes it lets it stand there on the work's terms. The license neither protects
+   it nor takes anything from its maker: they remain the author of what they made, as
+   the law has it, but become an *Author of the work* — a holder of its reserved
+   rights — only through explicit signed acceptance (step 4). The Authors take no
+   rights in it beyond its place in the work: no demands arise in either direction.
 
 4. **New authors join only by explicit signed acceptance.** A Signed Publication made
    by someone who is not yet an Author does not join the cumulative work by itself. An
@@ -130,8 +132,8 @@ snapshot-style publication outside a version control history.
   `<ref>` by `<name>`"). The contributor thereby becomes an Author. Merely continuing
   on top of it is not enough — acceptance of a new author must be explicit.
 - An **unsigned** patch or suggestion: incorporate it as you see fit — published
-  unsigned, it stands as part of the work, carries no authorship, and is not protected
-  by the license.
+  unsigned, it stands as part of the work and is not protected by the license; its
+  maker stays the author of the patch but does not become an Author of the work.
 
 ### 5. Optional: per-file notices
 

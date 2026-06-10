@@ -6,6 +6,13 @@ property in it. The work stays a defined, attributable, verifiable asset — sui
 IP registration, business valuation, or a **founder's capital contribution** when
 starting a company — while anyone may read, run, and share it unchanged.
 
+IPRL faces two ways. Toward the Open Source community, it keeps open habits: open code,
+open contribution, an open and verifiable record of authorship, and a built-in path for
+the Authors to carry the work over into a true Open Source license. Toward founders, it
+is a formation instrument that makes open publication and venture funding lawful
+together. It is deliberately not punitive: the Authors' protection lies in what is
+reserved, not in penalties.
+
 The license text is in [`IPRL_LICENSE.md`](IPRL_LICENSE.md). It is intentionally short
 and built around three generic terms: **Author (Contributor)**, **Publication**, and
 **Signed Publication**. It never mentions any concrete technology, yet it maps directly
@@ -76,12 +83,13 @@ B:                P3 ───╯       (B's Signed Publication, explicitly acce
   allowed only privately, to study the work or prepare an offer to the Authors.
 - ❌ **Removing or forging signatures or authorship notices** is prohibited.
 - ✅ All intellectual property remains **with the Authors** — in each Signed
-  Publication and in the whole — with automatic termination on breach and a single
-  30-day cure.
+  Publication and in the whole. What is not granted is simply reserved: unlicensed use
+  is a matter for ordinary authorship law, and no forfeiture or penalty clause hangs
+  over users.
 
-IPRL is **not an Open Source license** (it withholds modification rights by design).
-The Authors may at any time, acting together, additionally publish the work under an
-Open Source license.
+IPRL is **not an Open Source license** (it withholds modification rights by design),
+but it is written to live alongside Open Source practice. The Authors may at any time,
+acting together, publish the work under an Open Source license proper.
 
 ---
 

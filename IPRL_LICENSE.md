@@ -2,17 +2,25 @@
 
 **Version 2.0**
 
-## Purpose
+## Intent
 
-A work published under this License is protected by its Author's signature: the
-signature is what places a Publication under these terms and proves who made it. A work
-may grow into a series of Publications by one or more Authors, and the License then
-protects each Signed Publication and the cumulative work the series forms. The Authors
-keep all intellectual property in the work, so that it remains a defined, attributable,
-verifiable asset — fit for registration, valuation, separate licensing, or contribution
-as capital to a legal entity — while staying open for anyone to read, run, and share
-unchanged. This is a source-available license, not an Open Source license: the right to
-change the work is the right the Authors keep.
+This License faces two ways, and means to serve both.
+
+Toward the community, it keeps the habits of Open Source: the work is published for
+everyone to read, study, run, and share; contributions are welcome; the record of who
+made what is open and verifiable. It is written to live inside that practice, and the
+Authors may at any time, acting together, carry the work over into an Open Source
+license proper.
+
+Toward its Authors, it is an instrument of formation: by reserving the right to change
+the work and to publish the change, it keeps openly published work a defined,
+attributable, verifiable asset — fit for registration, valuation, separate licensing,
+or contribution as capital to a legal entity. Until the Authors decide otherwise, the
+work is source-available rather than Open Source.
+
+This License exists to make open publication and venture funding lawful together. It is
+not an instrument of prosecution: what it does not grant is simply reserved, and the
+Authors' protection lies in that reservation, not in penalties.
 
 ## Terms
 
@@ -85,8 +93,8 @@ different terms; rights already granted are not withdrawn.
 ## 4. Your Rights
 
 By exercising any right granted here, You accept this License. Each Author grants You a
-worldwide, royalty-free, non-exclusive, non-transferable, non-sublicensable license,
-irrevocable except as Section 6 provides, to:
+worldwide, royalty-free, non-exclusive, non-transferable, non-sublicensable,
+irrevocable license to:
 
 (a) access, read, and study any Publication, for any purpose;
 
@@ -118,12 +126,13 @@ misrepresent the origin, authorship, or completeness of any Publication;
 
 No patent or trademark rights are licensed.
 
-## 6. Termination
+## 6. Outside These Terms
 
-Your rights end automatically upon any breach of this License. For a first breach, they
-are reinstated once if You cure it fully within thirty days of learning of it. The
-Authors, individually or together, may require deletion of unauthorized copies and of
-anything derived from them, and may pursue every remedy the law allows.
+This License is meant to enable, not to punish. Whatever the granted rights cover needs
+no further permission; whatever they do not cover is simply not licensed and remains,
+like any unlicensed use, a matter for the general law of authorship. No forfeiture
+follows from a misstep: the grants of this License stay open to anyone who observes its
+terms.
 
 ## 7. No Warranty; No Liability
 

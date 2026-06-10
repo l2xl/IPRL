@@ -54,12 +54,11 @@ Publication is use of every Signed Publication embodied in that part.
 
 ## 3. Additions to the Work
 
-3.1 Material added to the work without a signature is not protected by this License. By
-publishing it unsigned, its maker implicitly permits its use as part of the work on the
-terms already established for the work, acquires no authorship, and obliges no one to
-protect any rights in that material. A later Signed Publication that builds upon
-unsigned material confirms it as part of the cumulative Publication on the signing
-Author's authority.
+3.1 An addition published without a signature becomes part of the cumulative
+Publication as it was published: whoever publishes it lets it stand there on the work's
+terms. Such an addition is not protected by this License, brings its maker no
+authorship, and implies no demands of the Authors — they take no rights in it beyond
+its place in the work.
 
 3.2 A Signed Publication made by someone who is not yet an Author does not, by itself,
 join the cumulative Publication. It joins only when an existing Author explicitly
@@ -70,9 +69,7 @@ maker becomes an Author.
 3.3 Whoever makes a Signed Publication accepts this License by signing it, and grants
 every present and future Author of the work a perpetual, worldwide, royalty-free,
 irrevocable license to use, reproduce, adapt, incorporate, and build upon that Signed
-Publication, and to publish the result under this License. Whoever offers material for
-addition to the work grants the Authors that same license in the offered material and
-warrants the right to grant it.
+Publication, and to publish the result under this License.
 
 3.4 An Author may transfer the rights in their Signed Publications, including to a
 legal entity as a contribution in kind; the successor takes them as an Author, bound by

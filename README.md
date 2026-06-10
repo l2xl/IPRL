@@ -40,11 +40,11 @@ steps:
    every Signed Publication embodied in it. The chain of signatures travelling with the
    work is the entire ownership record — no separate registry is needed.
 
-3. **Unsigned additions imply permission and carry no claim.** Whoever adds material to
-   the work without signing it thereby implicitly allows its use as part of the work on
-   the terms already established. Unsigned material gains no authorship and no
-   protection, and nobody is obliged to defend rights in it. A later Signed Publication
-   building on top confirms it as part of the work on the signing Author's authority.
+3. **Unsigned additions join the work and carry no claim.** An addition published
+   without a signature simply becomes part of the work as it was published — whoever
+   publishes it lets it stand there on the work's terms. It gains no authorship and no
+   protection of the license, and the Authors take no rights in it beyond its place in
+   the work: no demands arise in either direction.
 
 4. **New authors join only by explicit signed acceptance.** A Signed Publication made
    by someone who is not yet an Author does not join the cumulative work by itself. An
@@ -77,7 +77,7 @@ B:                P3 ───╯       (B's Signed Publication, explicitly acce
   intact.
 - ✅ Outside contributions are possible: a signed contribution makes its maker an
   **Author** once an existing Author explicitly accepts it with their own signature;
-  unsigned material is usable on the work's terms and carries no claim.
+  unsigned additions become part of the work and carry no claim.
 - ❌ **Publishing modified or derivative versions** is prohibited; adaptation is
   allowed only privately, to study the work or prepare an offer to the Authors.
 - ❌ **Removing or forging signatures or authorship notices** is prohibited.
@@ -129,8 +129,9 @@ snapshot-style publication outside a version control history.
   identifies the contribution and states its acceptance ("Accept signed contribution
   `<ref>` by `<name>`"). The contributor thereby becomes an Author. Merely continuing
   on top of it is not enough — acceptance of a new author must be explicit.
-- An **unsigned** patch or suggestion: incorporate it in your own signed commit — it is
-  published on your authority, and its offeror acquires no authorship.
+- An **unsigned** patch or suggestion: incorporate it as you see fit — published
+  unsigned, it stands as part of the work, carries no authorship, and is not protected
+  by the license.
 
 ### 5. Optional: per-file notices
 

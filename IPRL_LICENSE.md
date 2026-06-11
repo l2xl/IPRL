@@ -59,9 +59,9 @@ part.
 
 ## 3. Additions to the Cumulative Work
 
-3.1 An addition published without a signature becomes part of the Cumulative Work as it
-was published: whoever publishes it lets it stand there on the work's terms. Such an
-addition is not protected by this License and implies no demands of the Rightsholders —
+3.1 A Publication becomes a part of the Cumulative Work as it was published:
+whoever publishes it lets it stand there on the work's terms. If unsigned the Publication
+is not protected by this License and implies no demands of the Rightsholders —
 they take no rights in it beyond its place in the work. Its maker remains the author of
 what they made, with whatever rights the law attaches to that; a Contributor to the
 work, however, they become only as Section 3.2 provides.

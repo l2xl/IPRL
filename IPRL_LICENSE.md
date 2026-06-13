@@ -20,12 +20,15 @@ affixed to or logically associated with the Publication that identifies the make
 expresses the maker's intent to assert authorship and to apply this License, and can be
 verified by anyone against a credential the maker has made public.
 
+**Reserved Rights** means the economic rights this License defends in a Publication, as
+listed in Section 6.2; they are held by the Rightsholders and never include authorship.
+
 **Contributor** means an author whose authorship in the work is recognized under this
 License: the maker of its first Signed Publication, and every later author whose Signed
 Publication is accepted under Section 3.2. Being a Contributor is recognition of
 authorship; it does not by itself make one a Rightsholder.
 
-**Rightsholder** means whoever presently holds the rights this License reserves over the
+**Rightsholder** means whoever presently holds the Reserved Rights in the
 work — initially the work's author, and thereafter whoever those rights pass to by
 operation of law or by agreement, including under Section 3.4.
 
@@ -58,7 +61,7 @@ copyright terms, a derivative work of what it builds upon: it is protected as an
 work as to the new authorship it adds, without prejudice to the rights reserved in the
 earlier Publication.
 
-2.2 All rights this License reserves in a Signed Publication belong to its Rightsholder;
+2.2 All Reserved Rights in a Signed Publication belong to its Rightsholder;
 authorship belongs always to its author. Use of any part of the Cumulative Work is use of
 every Signed Publication embodied in that part.
 
@@ -69,8 +72,8 @@ publishes it lets it stand there on the work's terms. Authorship of what each ma
 remains with its maker. Where a Publication is incorporated into the work but the
 incorporation is not perfected by signature on both sides as Section 3.2 requires, its
 maker — by letting their Publication stand in the work — grants the Rightsholders an
-exclusive, perpetual, worldwide, royalty-free, irrevocable license to every right this
-License reserves in it, retaining authorship alone; a Contributor to the work they do not
+exclusive, perpetual, worldwide, royalty-free, irrevocable license to the Reserved
+Rights in it, retaining authorship alone; a Contributor to the work they do not
 thereby become.
 
 3.2 A Signed Publication made by someone who is not yet a Contributor does not, by
@@ -78,20 +81,20 @@ itself, join the Cumulative Work. It joins only when an existing Contributor acc
 in a Signed Publication of their own — one that identifies the accepted Signed
 Publication and expresses its acceptance. Upon that acceptance — the contribution signed
 by its maker, the acceptance signed by the accepting Contributor — its maker becomes a
-Contributor and retains authorship of what they made, and every right this License
-reserves in the contribution vests in the Rightsholders of the work.
+Contributor and retains authorship of what they made, and the Reserved Rights in the
+contribution vest in the Rightsholders of the work.
 
 3.3 Whoever makes a Signed Publication accepts this License by signing it. Authorship of
-what they made remains theirs; every other right this License reserves in it passes to
-the Rightsholders as Section 3.1 or 3.2 provides, so that the rights reserved over the
+what they made remains theirs; the Reserved Rights in it pass to
+the Rightsholders as Section 3.1 or 3.2 provides, so that the Reserved Rights over the
 whole present and future Cumulative Work are held by the Rightsholders and are not
-diminished by any contribution. A maker retains no reserved right that could limit the
+diminished by any contribution. A maker retains no Reserved Right that could limit the
 Rightsholders' use of the work, and becomes a Rightsholder only by operation of law or by
 agreement, including under Section 3.4.
 
 3.4 A Rightsholder may transfer their rights, including to a legal entity as a
 contribution in kind; the successor takes their place as Rightsholder, bound by and
-benefiting from this License. A transfer moves the reserved rights, not authorship: the
+benefiting from this License. A transfer moves the Reserved Rights, not authorship: the
 record of who made what stands. All Rightsholders together may also publish the work
 under different terms; rights already granted are not withdrawn.
 
@@ -131,13 +134,54 @@ misrepresent the origin, authorship, or completeness of any Publication;
 
 No patent or trademark rights are licensed.
 
-## 6. No Warranty; No Liability
+## 6. Authorship and Reserved Rights
+
+6.1 Authorship of every Publication remains always with its author, and the right to be
+named as the author of what one made is retained by the author and is never among the
+Reserved Rights. Every copy and every derived work must preserve it. To the extent the
+law lets an author consent, each maker consents to the adaptation, modification, and
+publication of changes to their Publication that this License contemplates, and will not
+invoke moral rights to prevent them; their authorship and right to be named are not
+thereby diminished.
+
+6.2 The Reserved Rights this License defends in a Publication are the economic rights that
+copyright, and any rights related or neighbouring to it, confer — namely
+
+(a) to reproduce it;
+
+(b) to distribute it or otherwise make it available;
+
+(c) to adapt, translate, arrange, transform, or otherwise build upon it, and to publish
+the result; and
+
+(d) to authorize or withhold any of these.
+
+They are held by the Rightsholders, so far as the law grants them; licensing any of them
+to You under Section 4 does not diminish them. They do not include authorship or any
+right the law makes inalienable (Section 6.1), nor any patent right (Section 7) or
+trademark right.
+
+## 7. Patents
+
+7.1 By signing a Publication, its maker grants — to the Rightsholders and to everyone
+exercising rights under Section 4 — a worldwide, royalty-free, non-exclusive, irrevocable,
+sublicensable license, under any patent claims it is the maker's to license that are
+necessarily infringed by that Publication alone or by its combination with the work, to
+make, have made, use, offer for sale, sell, import, run, reproduce, adapt, and distribute
+the work.
+
+7.2 If any person brings patent litigation — including a cross-claim or counterclaim —
+alleging that the work or any Publication within it infringes a patent, every patent
+license granted to that person under this Section terminates as of the day that litigation
+is filed.
+
+## 8. No Warranty; No Liability
 
 Every Publication is provided "as is", without warranty of any kind. To the fullest
 extent the law allows, no Contributor or Rightsholder is liable to anyone for any
 damages of any kind arising from a Publication or from this License.
 
-## 7. This Text
+## 9. This Text
 
 The text of this License is released under Creative Commons Zero 1.0 Universal: anyone
 may copy, change, and use it without restriction.

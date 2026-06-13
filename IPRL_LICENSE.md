@@ -20,12 +20,14 @@ affixed to or logically associated with the Publication that identifies the make
 expresses the maker's intent to assert authorship and to apply this License, and can be
 verified by anyone against a credential the maker has made public.
 
-**Contributor** means the maker of a Signed Publication belonging to the work: the
-maker of its first Signed Publication, and everyone accepted under Section 3.2.
+**Contributor** means an author whose authorship in the work is recognized under this
+License: the maker of its first Signed Publication, and every later author whose Signed
+Publication is accepted under Section 3.2. Being a Contributor is recognition of
+authorship; it does not by itself make one a Rightsholder.
 
-**Rightsholder** means whoever presently holds the rights this License reserves in a
-Signed Publication: its Contributor, unless those rights have passed to a successor
-under Section 3.4.
+**Rightsholder** means whoever presently holds the rights this License reserves over the
+work — initially the work's author, and thereafter whoever those rights pass to by
+operation of law or by agreement, including under Section 3.4.
 
 **You** means anyone who exercises rights in a Publication without being one of its
 Rightsholders.
@@ -51,31 +53,41 @@ include this License or a durable reference to it.
 revises what was published before. The whole set of Publications up to any point,
 signed and unsigned alike, is named the **Cumulative Work**. The Cumulative Work is not a
 separate object of licensing: what this License protects are the Signed Publications
-within it.
+within it. Where a later Publication revises or builds upon an earlier one, it is, in
+copyright terms, a derivative work of what it builds upon: it is protected as an original
+work as to the new authorship it adds, without prejudice to the rights reserved in the
+earlier Publication.
 
-2.2 All intellectual property in a Signed Publication belongs to its Rightsholder. Use
-of any part of the Cumulative Work is use of every Signed Publication embodied in that
-part.
+2.2 All rights this License reserves in a Signed Publication belong to its Rightsholder;
+authorship belongs always to its author. Use of any part of the Cumulative Work is use of
+every Signed Publication embodied in that part.
 
 ## 3. Additions to the Cumulative Work
 
-3.1 A Publication becomes a part of the Cumulative Work as it was published:
-whoever publishes it lets it stand there on the work's terms. If unsigned the Publication
-is not protected by this License and implies no demands of the Rightsholders —
-they take no rights in it beyond its place in the work. Its maker remains the author of
-what they made, with whatever rights the law attaches to that; a Contributor to the
-work, however, they become only as Section 3.2 provides.
+3.1 A Publication becomes a part of the Cumulative Work as it was published: whoever
+publishes it lets it stand there on the work's terms. Authorship of what each maker made
+remains with its maker. Where a Publication is incorporated into the work but the
+incorporation is not perfected by signature on both sides as Section 3.2 requires, its
+maker — by letting their Publication stand in the work — grants the Rightsholders an
+exclusive, perpetual, worldwide, royalty-free, irrevocable license to every right this
+License reserves in it, retaining authorship alone; a Contributor to the work they do not
+thereby become.
 
 3.2 A Signed Publication made by someone who is not yet a Contributor does not, by
-itself, join the Cumulative Work. It joins only when an existing Rightsholder
-explicitly accepts it in a Signed Publication of the Rightsholder's own — one that
-identifies the accepted Signed Publication and expresses its acceptance. Upon that
-acceptance, its maker becomes a Contributor and the Rightsholder of their contribution.
+itself, join the Cumulative Work. It joins only when an existing Contributor accepts it
+in a Signed Publication of their own — one that identifies the accepted Signed
+Publication and expresses its acceptance. Upon that acceptance — the contribution signed
+by its maker, the acceptance signed by the accepting Contributor — its maker becomes a
+Contributor and retains authorship of what they made, and every right this License
+reserves in the contribution vests in the Rightsholders of the work.
 
-3.3 Whoever makes a Signed Publication accepts this License by signing it, and grants
-every present and future Rightsholder of the work a perpetual, worldwide, royalty-free,
-irrevocable license to use, reproduce, adapt, incorporate, and build upon that Signed
-Publication, and to publish the result under this License.
+3.3 Whoever makes a Signed Publication accepts this License by signing it. Authorship of
+what they made remains theirs; every other right this License reserves in it passes to
+the Rightsholders as Section 3.1 or 3.2 provides, so that the rights reserved over the
+whole present and future Cumulative Work are held by the Rightsholders and are not
+diminished by any contribution. A maker retains no reserved right that could limit the
+Rightsholders' use of the work, and becomes a Rightsholder only by operation of law or by
+agreement, including under Section 3.4.
 
 3.4 A Rightsholder may transfer their rights, including to a legal entity as a
 contribution in kind; the successor takes their place as Rightsholder, bound by and

@@ -98,6 +98,12 @@ benefiting from this License. A transfer moves the Reserved Rights, not authorsh
 record of who made what stands. All Rightsholders together may also publish the work
 under different terms; rights already granted are not withdrawn.
 
+3.5 By signing a Publication, its maker represents to the Rightsholders, present and
+future, that it is their own creation or is otherwise theirs to contribute; that they have
+the right to grant the rights this License conveys in it under Sections 3 and 7; that, so
+far as they are aware, it infringes no one's rights; and that they have disclosed any
+third-party material it contains and the terms under which that material is used.
+
 ## 4. Your Rights
 
 By exercising any right granted here, You accept this License. Each Rightsholder grants
@@ -177,7 +183,8 @@ is filed.
 
 ## 8. No Warranty; No Liability
 
-Every Publication is provided "as is", without warranty of any kind. To the fullest
+Except for the representation in Section 3.5, every Publication is provided "as is",
+without warranty of any kind. To the fullest
 extent the law allows, no Contributor or Rightsholder is liable to anyone for any
 damages of any kind arising from a Publication or from this License.
 

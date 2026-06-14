@@ -15,10 +15,20 @@ its Rightsholders, acting together, decide otherwise.
 
 **Publication** means a work of authorship made publicly available.
 
-**Signed Publication** means a Publication bearing the signature of its maker: a record
-affixed to or logically associated with the Publication that identifies the maker,
-expresses the maker's intent to assert authorship and to apply this License, and can be
-verified by anyone against a credential the maker has made public.
+**Signed Publication** means a Publication bearing the signature of its maker. A
+signature, for the purposes of this License, is a deliberate act of signing — a mark or
+record that the maker affixes to or logically associates with the Publication in order to
+sign it — that:
+(a) identifies the maker and is uniquely linked to them;
+(b) is made by means under the maker's sole control, so that no one else can produce it in
+the maker's name; and
+(c) is bound to the Publication and can be verified by anyone against something the maker
+has made public, so that any later change to the Publication or to the signature can be
+detected.
+A mark that merely names or identifies who made, authored, or uploaded a Publication is
+attribution, not a signature, and does not become one for the purposes of this License
+merely because some law might otherwise treat it as a signature. Nothing is a signature
+under this License unless it meets this definition.
 
 **Reserved Rights** means the economic rights this License defends in a Publication, as
 listed in Section 6.2; they are held by the Rightsholders and never include authorship.
@@ -49,6 +59,14 @@ by any other lawful means.
 
 1.3 Whoever makes a Publication available must keep its signatures with it and must
 include this License or a durable reference to it.
+
+1.4 This License is an offer to the public: it offers anyone the terms on which they may
+take part in the work. Signing a Publication under this License — whether the first
+Publication of a work or one that builds upon a work already under it — accepts that
+offer. Because this License so provides, that signature is the maker's explicit and
+deliberate will to sign the Publication, to assert authorship of what they made, and to be
+bound by this License. No separate declaration of that will is required, and nothing short
+of a signature as this License defines it can supply it.
 
 ## 2. The Cumulative Work
 

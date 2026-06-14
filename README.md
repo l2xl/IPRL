@@ -20,9 +20,11 @@ commits and tags, detached signatures, package releases.
 
 Three notions that usually blur into the one word *author* are kept distinct: the
 **author** in the ordinary sense (whoever made something — a fact no license can move),
-the **Contributor** (whose Signed Publication belongs to the work and is protected by
-the license), and the **Rightsholder** (whoever currently holds the reserved rights in
-a Signed Publication — its Contributor at first, a successor after a transfer).
+the **Contributor** (an author whose Signed Publication is recognized as part of the
+work), and the **Rightsholder** (whoever currently holds the **Reserved Rights** — the
+economic rights in the work — the author at first, a successor after a transfer). Being
+a Contributor is recognition of authorship; it does not by itself make one a
+Rightsholder, and authorship is never among the Reserved Rights.
 
 ---
 
@@ -33,9 +35,12 @@ steps:
 
 1. **A Publication, protected by its signature.** A work made publicly available is a
    *Publication*. It comes under the license when its maker signs it: the signature is
-   the single act that proves authorship and applies the terms. The signature
-   definition is technology-neutral — a signed commit, a signed tag, a detached
-   signature on an archive, or a qualified electronic signature all satisfy it. What is
+   the single act that proves authorship and applies the terms — a deliberate act of
+   signing, uniquely linked to the maker, under their sole control, and verifiable by
+   anyone against something they have made public. The definition is technology-neutral —
+   a signed commit, a signed tag, a detached signature on an archive, or a qualified
+   electronic signature all satisfy it; a mark that merely names who made or uploaded
+   something is attribution, not a signature. What is
    not signed, the license does not protect.
 
 2. **From one Publication to a series.** A work may grow: later Publications add to or
@@ -43,26 +48,29 @@ steps:
    some perhaps unsigned — is called the *Cumulative Work*. The name exists for
    clarity, not as a separate object of licensing: the license attaches to the Signed
    Publications, and protection of the whole follows from them, because using any part
-   of the Cumulative Work is using every Signed Publication embodied in it. All
-   intellectual property in a Signed Publication belongs to its Rightsholder — its
-   Contributor at first — and the chain of signatures travelling with the work is the
-   entire ownership record: no separate registry is needed.
+   of the Cumulative Work is using every Signed Publication embodied in it. The
+   **Reserved Rights** — the economic rights — in every Signed Publication belong to the
+   work's Rightsholders, while authorship belongs always to its author; the chain of
+   signatures travelling with the work is the entire ownership record, so no separate
+   registry is needed.
 
-3. **Unsigned additions join the work and carry no claim.** An addition published
-   without a signature simply becomes part of the work as it was published — whoever
-   publishes it lets it stand there on the work's terms. The license neither protects
-   it nor takes anything from its maker: they remain the author of what they made, as
-   the law has it, but become a *Contributor* — protected by the license — only through
-   explicit signed acceptance (step 4). The Rightsholders take no rights in it beyond
-   its place in the work: no demands arise in either direction.
+3. **Unsigned additions join the work and raise no competing claim.** An addition
+   published without a signature simply becomes part of the work as it was published —
+   whoever publishes it lets it stand there on the work's terms. Its maker remains the
+   author of what they made, as the law has it, but becomes a *Contributor* — recognized
+   by the license — only through explicit signed acceptance (step 4). By letting an
+   unsigned addition stand in the work, its maker grants the Rightsholders an exclusive,
+   irrevocable license to the Reserved Rights in it, keeping authorship alone, so the
+   work's Reserved Rights stay whole and no competing ownership claim can arise.
 
 4. **New contributors join only by explicit signed acceptance.** A Signed Publication
    made by someone who is not yet a Contributor does not join the Cumulative Work by
-   itself. An existing Rightsholder must explicitly accept it in a Signed Publication
-   of their own — one that identifies the accepted contribution and states its
-   acceptance. Only then does its maker become a Contributor, and the Rightsholder of
-   their contribution. New ownership claims on the work can therefore never arise
-   implicitly or unilaterally.
+   itself. An existing Contributor must explicitly accept it in a Signed Publication
+   of their own — one that identifies the accepted Signed Publication and states its
+   acceptance. Only then does its maker become a Contributor, retaining authorship of
+   what they made; the Reserved Rights in the contribution vest in the work's
+   Rightsholders. New ownership claims on the work can therefore never arise implicitly
+   or unilaterally.
 
 On top of this model, the public gets use and the Rightsholders keep change: anyone may
 read, study, run, and redistribute the work unchanged — commercially or not — with
@@ -73,9 +81,10 @@ A picture of the model, with Publications `P1…P4` by Contributors `A` and `B`:
 
 ```
 A: P1 ── P2 ──────────── P4 ─▶  Cumulative Work = P1+P2+P3+P4
-                 ╲       ╱      Contributors = {A, B}
-B:                P3 ───╯       (B's Signed Publication, explicitly accepted
-                                 by A's signature in P4)
+                 ╲       ╱      Contributors = {A, B}   Rightsholders = {A}
+B:                P3 ───╯       (B's Signed Publication, explicitly accepted by A
+                                 in P4: B becomes a Contributor; the Reserved Rights
+                                 in P3 vest in the Rightsholder A)
 ```
 
 ---
@@ -87,13 +96,19 @@ B:                P3 ───╯       (B's Signed Publication, explicitly acce
 - ✅ Free to **redistribute verbatim copies**, with license, signatures, and notices
   intact.
 - ✅ Outside contributions are possible: a signed contribution makes its maker a
-  **Contributor** once an existing Rightsholder explicitly accepts it with their own
-  signature; unsigned additions become part of the work and carry no claim.
+  **Contributor** once an existing Contributor explicitly accepts it with their own
+  signature, while the **Reserved Rights** in it vest in the work's Rightsholders;
+  unsigned additions become part of the work and raise no competing claim.
 - ❌ **Publishing modified or derivative versions** is prohibited; adaptation is
   allowed only privately, to study the work or prepare an offer to the Rightsholders.
 - ❌ **Removing or forging signatures or authorship notices** is prohibited.
-- ✅ All intellectual property remains **with the Rightsholders** — in each Signed
-  Publication and in the whole. What is not granted is simply reserved.
+- ✅ A **patent license** travels with every Signed Publication: its maker licenses, to
+  the Rightsholders and to everyone using the work, any patent claims of theirs the
+  Publication necessarily infringes — and bringing patent litigation over the work ends
+  that license.
+- ✅ All **Reserved Rights** remain **with the Rightsholders** — in each Signed
+  Publication and in the whole; authorship always stays with its author and is never a
+  Reserved Right. What is not granted is simply reserved.
 
 IPRL is **not an Open Source license** (it withholds modification rights by design),
 but it is written to live alongside Open Source practice. The Rightsholders may at any
@@ -135,15 +150,17 @@ snapshot-style publication outside a version control history.
 
 ### 4. Accepting contributions
 
-- A contribution arriving as the contributor's **own signed work**: accept it
-  explicitly with your own signature — for example, a signed merge commit whose message
-  identifies the contribution and states its acceptance ("Accept signed contribution
-  `<ref>` by `<name>`"). Its maker thereby becomes a Contributor, and the Rightsholder
-  of their contribution. Merely continuing on top of it is not enough — acceptance of a
-  new contributor must be explicit.
+- A contribution arriving as the contributor's **own signed work**: an existing
+  Contributor accepts it explicitly with their own signature — for example, a signed
+  merge commit whose message identifies the contribution and states its acceptance
+  ("Accept signed contribution `<ref>` by `<name>`"). Its maker thereby becomes a
+  Contributor and keeps authorship of what they made, while the Reserved Rights in the
+  contribution vest in the work's Rightsholders. Merely continuing on top of it is not
+  enough — acceptance of a new contributor must be explicit.
 - An **unsigned** patch or suggestion: incorporate it as you see fit — published
-  unsigned, it stands as part of the work and is not protected by the license; its
-  maker stays the author of the patch but does not become a Contributor.
+  unsigned, it stands as part of the work; its maker stays the author of the patch but
+  does not become a Contributor, and by letting it stand grants the Rightsholders an
+  exclusive license to the Reserved Rights in it.
 
 ### 5. Optional: per-file notices
 
@@ -181,12 +198,16 @@ supported; commercial use of unchanged copies is now permitted.
 encoded the mechanism into the license — VCS and changeset definitions, a `CONTRIBUTORS`
 registry with nomination/acceptance/removal procedures, a ratification protocol, and a
 dormancy/fallback regime. The final v2 replaces all of that with a few generic terms:
-the signature chain *is* the registry, an existing Rightsholder's explicit signed
+the signature chain *is* the registry, an existing Contributor's explicit signed
 acceptance *is* admission and ratification, and relicensing (including any open-source
 transition) is left to the Rightsholders' unanimous, signed decision rather than an
-automatic dormancy clock. The overloaded role of "Author" is split: the **Contributor**
-made the work and always remains its author; the **Rightsholder** currently holds the
-reserved rights, which alone can move.
+automatic dormancy clock. The overloaded role of "Author" is split: a **Contributor**
+made the work and always remains its author, but is not for that reason a Rightsholder;
+the **Rightsholder** holds the **Reserved Rights** — the economic rights, which alone
+can move — and the Reserved Rights in every accepted contribution vest in the work's
+Rightsholders. A later edition makes the rights bundle explicit, adds a patent grant
+with defensive termination, and records the author's consent to the changes the license
+contemplates, so moral rights cannot be used to block them.
 
 ---
 
